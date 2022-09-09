@@ -10,10 +10,23 @@ body::-webkit-scrollbar-track {
 background-color: #000000;
 }
 
-.navbar {
+#navbar {
   position: fixed;
   width: 100%;
   min-height: 5rem;
   background-color: #efefef;
   list-style: none;
+}
+
+#navbar li {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 30px;
+  /* font-size: 60px; */
+  font-family: sans-serif;
+}
+
+#navbar li:last-child {
+text-align: right;
 }
