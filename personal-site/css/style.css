@@ -1,5 +1,6 @@
 :root {
   font-size: 16px;
+  font-family: sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -7,26 +8,42 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-background-color: #000000;
+  background-color: #000000;
 }
 
+/* HORIZONTAL NAVBAR */
+/* w3schools nav bar */
 #navbar {
   position: fixed;
   width: 100%;
-  min-height: 5rem;
+  min-height: 4rem;
   background-color: #efefef;
-  list-style: none;
+}
+
+#navbar ul {
+  /* float: left; */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 #navbar li {
   float: left;
-  display: block;
-  text-align: center;
-  padding: 30px;
-  /* font-size: 60px; */
-  font-family: sans-serif;
+  display: inline;
+}
+#navbar li:last-child {
+  float: right;
 }
 
-#navbar li:last-child {
-text-align: right;
+li a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 1rem 1rem;
+  color: black;
+  font-size: 1.5rem;
+}
+li a:hover {
+  background-color: #e8dbd8;
 }
