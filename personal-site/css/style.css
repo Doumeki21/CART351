@@ -18,9 +18,9 @@ body {
   background-color: #efefef;
 }
 
-/* HORIZONTAL NAVBAR */
+/* HORIZONTAL WEB NAVBAR */
 /* w3schools nav bar */
-#navbar {
+.desktop-navbar {
   z-index: 1;
   position: relative;
   width: 100%;
@@ -30,18 +30,18 @@ body {
   background-color: #efefef;
 }
 
-#navbar ul {
+.desktop-navbar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-#navbar li {
+.desktop-navbar li {
   float: left;
   display: inline;
 }
-#navbar li:last-child {
+.desktop-navbar li:last-child {
   float: right;
 }
 
@@ -53,19 +53,41 @@ li a {
   color: black;
 }
 
-ul li:first-child {
+.desk-ul li:first-child {
   margin-left: 2rem;
 }
-ul li:last-child {
+.desk-ul li:last-child {
   margin-right: 2rem;
 }
 
-li a:hover {
+.deskv li a:hover {
   background-color: #e8dbd8;
 }
 
-/* MAKE COLLAPSABLE NAVBAR */
+/* VERTICAL MOBILE NAVBAR */
+.mobile-navbar {
+  height: 100vh;
+  background-color: #92a986;
+}
 
+.mobile-navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.mobilev li a:hover {
+  background-color: #9d8680;
+}
+
+/* MAKE COLLAPSABLE NAVBAR */
+@media screen and (max-width: 990px) {
+  .desktop-navbar {
+    display: none;
+
+  }
+}
 
 /* THE HERO SECTION */
 #hero-section {
@@ -74,15 +96,23 @@ li a:hover {
   margin-left: auto;
   margin-right: auto;
 
-  padding: 5em;
+  padding-left: 5em;
+  padding-right: 5em;
+  margin-top: 5em;
   font-size: 1.5em;
-  /* height: 100vh; */
+  height: 100vh;
   /* background-color: white; */
+}
+
+/*to add some space on mobile*/
+h1 {
+  line-height: 1em;
 }
 
 main {
   display: block;
   max-width: 28em;
+  margin-top: -5em;
   margin-left: auto;
   margin-right: auto;
   padding: 2em;
