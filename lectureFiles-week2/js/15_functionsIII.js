@@ -2,25 +2,25 @@ window.onload = function(){
 console.log('15:: functions three');
 //NEW return a function def
  //2: call the custom function
- drawSquare(50,100,40,.65); //call my custom function!
+//  drawSquare(50,100,40,.65); //call my custom function!
 
  //4 : use the function that returns the def to either draw a square OR to draw a circle
-// let num = Math.floor(Math.random()*100);
-//  let functionChosen = chooseASHape(num);
-//  console.log(num);
-// console.log(functionChosen);
-//  //use it
-// functionChosen(50,600,40,.65);
+let num = Math.floor(Math.random()*100);
+ let functionChosen = chooseASHape(num);
+ console.log(num);
+console.log(functionChosen);
+ //use it
+functionChosen(50,600,40,.65);
 
 
 /*5: NEW: draw more in a for loop (col);*/
-// let numB =0;
-// for(let xPos = 50; xPos <600; xPos+=50){
+let numB =0;
+for(let xPos = 50; xPos <600; xPos+=50){
 
-// let functionChosen = chooseASHape(numB);
-// numB=numB+1;
-// functionChosen(xPos,600,40,.65);
-// }
+let functionChosen = chooseASHape(numB);
+numB=numB+1;
+functionChosen(xPos,600,40,.65);
+}
 
 
 //1::function CUSTOM :: pass the x,y,r ...
