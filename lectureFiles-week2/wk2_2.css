@@ -1,0 +1,301 @@
+/* body {
+  background: black;
+  margin: 1%;
+  padding: 0;
+  color: white;
+}
+
+h2 {
+  color: magenta;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.para {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.para span {
+  color: #d12a83;
+}
+
+.paraAbs {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  position: absolute;
+  top: 200px;
+}
+
+
+#inter {
+  position: absolute;
+  width: 300px;
+  height: 500px;
+  left: 0px;
+  z-index: 1;
+  background: #555555;
+
+}
+
+#left {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 0px;
+  z-index: 1;
+  background: #2a67d1;
+
+}
+
+#right {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 500px;
+  z-index: 1;
+  background: #ffffff;
+
+}
+
+
+.shape {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  background: #c027d4;
+  opacity: 0.75;
+  margin: 1px;
+  border: solid rgb(34, 33, 33) 1px;
+
+}
+
+.circ {
+  border-radius: 20px;
+  z-index: 100;
+}
+
+#resetButton {
+  position: absolute;
+  left: 50px;
+  top: 5px;
+  background: #d12a83;
+  padding: 5px;
+}
+
+#resetButton:hover {
+  cursor: grab;
+}
+
+#parent {
+  width: 1000px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.colA {
+  position: relative;
+  width: 50%;
+  background: #252424;
+}
+
+.colB {
+  position: relative;
+  background: #9da0a3;
+  width: 50%;
+}
+
+#parent h1 {
+  width: 100%;
+  position: relative;
+} */
+
+body {
+  background: black;
+  margin: 1%;
+  padding: 0;
+  color: white;
+}
+
+#exPerson_1 h2,
+#exUtilityB h2,
+#exUtility h2,
+#exUtilityTwo h2,
+#exUtilityThree h2 {
+  color: white;
+  padding: 10px;
+
+}
+
+/*** for others... **/
+#exPerson_1,
+#exUtility,
+#exUtilityB,
+#exUtilityTwo,
+#exUtilityThree {
+  background-color: #d1432a;
+  width: 85%;
+  margin: 5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+#exPerson_1 p,
+#exUtility p,
+#exUtilityB p,
+#exUtilityTwo p,
+#exUtilityThree p {
+  background: rgba(255, 255, 255, 0.65);
+  color: #d1432a;
+  padding: 5px;
+}
+
+#exLoops_1 h2,
+#exLoops_2 h2,
+#exLoops_3 h2 {
+  color: white;
+  padding: 10px;
+}
+
+
+#exLoops_1 h3,
+#exLoops_2 h3,
+#exLoops_3 h3 {
+  color: rgb(233, 233, 233);
+  padding: 10px;
+}
+
+/*** for others... **/
+#exLoops_1,
+#exLoops_2,
+#exLoops3 {
+  background-color: #4f6be6;
+  width: 85%;
+  margin: 5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+#exLoops_1 p {
+  background: rgba(255, 255, 255, 0.65);
+  color: #4f6be6;
+  padding: 5px;
+  list-style: none;
+}
+
+#exLoops_2 ul,
+#exLoops_3 ul {
+  background: rgba(255, 255, 255, 0.65);
+  color: #4f6be6;
+  list-style: none;
+  padding: 5px;
+}
+
+.ans {
+  color: #e64f4f;
+  font-size: 18px;
+  font-weight: bold;
+  font-variant-caps: all-petite-caps;
+
+}
+
+#exDefault_Interval h2,
+#exDefault_SIMPLE h2,
+#exDefault_PROMISE_INT h2,
+#exDefault_PROMISE_CHAIN h2 {
+  color: white;
+  padding: 10px;
+}
+
+
+
+#exDefault_Interval,
+#exDefault_SIMPLE,
+#exDefault_PROMISE_INT,
+#exDefault_PROMISE_CHAIN {
+  background-color: #e64f4f;
+  width: 85%;
+  margin: 5%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+
+}
+
+#exDefault_Interval p,
+#exDefault_SIMPLE p,
+#exDefault_PROMISE_INT p,
+#exDefault_PROMISE_CHAIN p {
+  background: rgba(255, 255, 255, 0.65);
+  color: #e64f4f;
+  padding: 5px;
+  list-style: none;
+}
+
+#t1 h2,
+#t2 h2,
+#t3 h2,
+#t4 h2 {
+  color: white;
+  padding: 10px;
+}
+
+#t1,
+#t2,
+#t3,
+#t4 {
+  background-color: #23af62;
+  width: 85%;
+  margin: 5%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+
+}
+
+#t1 p,
+#t2 p,
+#t3 p,
+#t4 p {
+  background: rgba(255, 255, 255, 0.65);
+  color: #23af62;
+  padding: 5px;
+  list-style: none;
+}
+
+#resOne {
+  color: white;
+  background-color: rgb(212, 66, 41);
+  font-size: 14px;
+}
+
+#resTwo {
+  color: white;
+  background-color: rgb(211, 119, 102);
+  font-size: 14px;
+}
+
+#resThree,
+#resFour,
+#resFive {
+  color: rgb(59, 58, 58);
+  background-color: rgb(0, 195, 255);
+  font-size: 14px;
+}
+
+#resSix,
+#resSeven,
+#resEight {
+  color: rgb(59, 58, 58);
+  background-color: rgb(255, 145, 0);
+  font-size: 14px;
+
+}
+
+#resNine,
+#resTen,
+#resEleven {
+  color: rgb(136, 28, 73);
+  background-color: honeydew;
+  font-size: 14px;
+
+}
