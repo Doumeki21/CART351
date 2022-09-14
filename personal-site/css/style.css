@@ -22,8 +22,9 @@ body {
 /* w3schools nav bar */
 .desktop-navbar {
   z-index: 1;
-  position: relative;
+  position: fixed;
   width: 100%;
+  top: 0;
   margin-left: auto;
   margin-right: auto;
   min-height: 4rem;
