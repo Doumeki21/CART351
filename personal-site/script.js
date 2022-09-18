@@ -7,7 +7,7 @@ closeButton.onclick = function() {
     let mobileNavbar = document.getElementsByClassName("mobile-navbar");
 
     
-    
+    //toggle the close button (this already available in bootstrap)
     if (mobileNavbar[0].style.display === "none") {
         mobileNavbar[0].style.display = "block";
         closeButton.style.display = "block"; 
