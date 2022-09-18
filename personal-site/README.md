@@ -5,4 +5,4 @@
 
 **References**
 - [W3schools - CSS Horizontal Navigation Bar](https://www.w3schools.com/css/css_navbar_horizontal.asp)
-- [Website layout inspiration]()
+- [Website layout inspiration](https://resilientwebdesign.com/)
