@@ -1,8 +1,11 @@
 # Notes
 
-- Add color to current site tab.
+- Toggle mobile navbar (hidden? active method?)
+- Once selected page from mobile navbar, it should hide. 
 - About tab (add bio + ways of contact.)
 
 **References**
 - [W3schools - CSS Horizontal Navigation Bar](https://www.w3schools.com/css/css_navbar_horizontal.asp)
 - [Website layout inspiration](https://resilientwebdesign.com/)
+- [Toggle class in vanilla js](https://ryfarlane.com/article/toggle-class-vanilla-javascript)
+- [Creating and animating a hamburger icon to X](https://ryfarlane.com/article/animated-hamburger-menu-icon-to-x-close-icon-css)
