@@ -8,6 +8,8 @@ body {
   height: 100vh;
   line-height: 1.78em;
   background-color: #efefef;
+  animation: transitionIn 1s;
+  animation-delay: 3s;
 }
 
 /* HORIZONTAL WEB NAVBAR */
