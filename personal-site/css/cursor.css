@@ -1,0 +1,21 @@
+#moveMe {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .cursor {
+    /* cursor: none; */
+    z-index: 10;
+    background-color: rgba(255, 205, 199, 0.5);
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid black;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-5%, -5%);
+    /* This helps scrolling and click links! */
+    pointer-events: none;
+    transition: all 0.1s ease;
+    transform-origin: 100% 100%;
+  }
