@@ -56,6 +56,7 @@ window.onload = function () {
       // HERE :: WE HAVE an anon function - and within that we say when the anon function is triggered call self -
       //and now becuase we call that function (not pass a ref - "this" inside the function will now be our object)
       // the SIDE issues of js ... ::
+      //***NEED TO USE SELF (or other object name), CUZ 'THIS' CHANGES AND WE ARE REFFERING TO AN HTML ELEMENT.***
       this.el.addEventListener("mouseover", function () { self.removeFromArray() });
 
     } //close constructor
@@ -84,6 +85,7 @@ window.onload = function () {
       demoShapes.splice(myIndex, 1);
       this.el.remove();
       // AND have to remove from the dom...
+      //WHAT'S IN THE DOM IS THE ACTUAL ELEMENT.
 
 
     }

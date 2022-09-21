@@ -105,13 +105,13 @@ let demoShapes = [];
  document.getElementById("parent").addEventListener("mousedown",addPos);
 
 
- function addPos(){
+ function addPos(event){
    //4: instead of random pos - lets capture the x of the mouse and put that in instead
    let bBox = this.getBoundingClientRect();
    // the one we use ...diff
    let mouse_offset_x = event.clientX-bBox.x;
    let mouse_offset_y = event.clientY-bBox.y;
-   // PUSH into the array
+   // PUSH into the array ('push' adds to the end of the array)
    multipleXPositions.push(mouse_offset_x);
    //console.log(multipleXPositions);
    let lastAddedIndex = multipleXPositions.length-1;
@@ -135,7 +135,7 @@ let demoShapes = [];
    let r = Math.floor(Math.random()*255);
    let g = Math.floor(Math.random()*255);
    let b = Math.floor(Math.random()*255);
-  //demoShapes.push(new DemoShape(multipleXPositions[lastAddedIndex],500,r,g,b));
+  demoShapes.push(new DemoShape(multipleXPositions[lastAddedIndex],500,r,g,b));
   // OPTION C: note:: how we actually do not need the other array anymore  -
   // we can just push the x and y  ...
  demoShapes.push(new DemoShape(mouse_offset_x,mouse_offset_y,r,g,b));

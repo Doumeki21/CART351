@@ -99,24 +99,24 @@ checkScreenBounds(){
 //   //3: lets draw ONE ellipse using our object and the first element in the array:
  
 //  // //a: how to access? - BY THE POSITION IN THE ARRAY (starts at 0)
-//   document.getElementById("text_1").innerHTML = "item in array: "+multipleXPositions[1];
+  document.getElementById("text_1").innerHTML = "item in array: "+multipleXPositions[1];
 //  //NEW:: multipleXPositions.length === size of array
-//   document.getElementById("text_2").innerHTML = "array length: "+multipleXPositions.length;
+  document.getElementById("text_2").innerHTML = "array length: "+multipleXPositions.length;
 //  //
 //   //b: how to access each one - > by using a for loop:
 //   //USE the length of the array as the condition to terminate the loop
-//    for (let i=0; i<multipleXPositions.length;i++){
-//      let p = document.createElement('p');
-//      p.classList.add("paraAbs");
-//      p.textContent = multipleXPositions[i];
-//      //append to the DOM...
-//      document.getElementById("parent").appendChild(p);
-//      p.style.left = i*150+"px";
-//      //**bonus**:: note how we use the element in the array as a position...
-//      //p.style.left = multipleXPositions[i]+"px";
-//      p.style.top = 300+"px";
+   for (let i=0; i<multipleXPositions.length;i++){
+     let p = document.createElement('p');
+     p.classList.add("paraAbs");
+     p.textContent = multipleXPositions[i];
+     //append to the DOM...
+     document.getElementById("parent").appendChild(p);
+     p.style.left = i*150+"px";
+     //**bonus**:: note how we use the element in the array as a position...
+     //p.style.left = multipleXPositions[i]+"px";
+     p.style.top = 300+"px";
 
-//  }
+ }
 //
  /*c: USING THE SHAPE OBJECT...*/
    for (let i=0; i<multipleXPositions.length;i++){

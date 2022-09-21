@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>canvas and mouse</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      canvas {
+        position: relative;
+        background: #7700b3;
+        left: 10%;
+      }
+
+      #top {
+        display: flex;
+        justify-content: space-around;
+        background: #e6b3ff;
+        position: relative;
+        left: 10%;
+        width: 80%;
+        margin-top: 5vh;
+        height: 8vh;
+      }
+
+      .high {
+        color: #7700b3;
+      }
+    </style>
+    <script src="js/mouseEx.js"></script>
+    <script src="js/triangle-rev.js"></script>
+  </head>
+  <body>
+    <header id="top">
+      <p id="messageA"></p>
+      <p id="messageB"></p>
+    </header>
+    <canvas id="testCanvas" width="500" height="500"></canvas>
+  </body>
+</html>
