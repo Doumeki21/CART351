@@ -28,6 +28,17 @@ class Square {
     }
   }
 
+  //   mouse
+  checkBounds(localCanvas) {
+    if (this.x > localCanvas.width || this.x < 0) {
+      this.speedX = this.speedX * -1;
+    }
+
+    if (this.y > localCanvas.height || this.y < 0) {
+      this.speedY = this.speedY * -1;
+    }
+  }
+
   draw(fileColor) {
     this.localCanvasContext.fillStyle = fileColor;
     this.localCanvasContext.beginPath();
@@ -39,16 +50,5 @@ class Square {
     this.localCanvasContext.lineWidth = 2;
     this.localCanvasContext.stroke();
     this.localCanvasContext.closePath();
-  }
-
-//   mouse
-  checkBounds(localCanvas) {
-    if (this.x > localCanvas.width || this.x < 0) {
-      this.speedX = this.speedX * -1;
-    }
-
-    if (this.y > localCanvas.height || this.y < 0) {
-      this.speedY = this.speedY * -1;
-    }
   }
 }

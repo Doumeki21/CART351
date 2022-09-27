@@ -1,16 +1,13 @@
-html, body {
-    /* width: 100%;
-    height: 100%; */
+/* html, body {
     margin: 0;
     padding: 0%;
-  }
+  } */
 
+  /* REF: centering from stackoverflow */
   canvas {
-    width: 50%;
-    height: 50%;
-    position: relative;
     background: #ffe3c0;
-    margin-left: 5em;
-    margin-right:5em;
-    align-items: center;
+    padding: 0;
+    margin: auto;
+    display: block;
+    width: 800px;
   }

@@ -8,7 +8,7 @@ window.onload = function () {
   //get the context
   let context = canvas.getContext("2d");
 
-  let file = new File();
+  let file = new File("#8ED6FF");
   //   file.fileColor();
 
   let square = new Square(10, 10, context);
@@ -20,7 +20,7 @@ window.onload = function () {
     //console.log("animate");
     let pBox = canvas.getBoundingClientRect();
     square.update(pBox.width, pBox.height, file.fileColor());
-    console.log("" + file.fileColor());
+    // console.log("" + file.fileColor());
 
     //5: call to check the edges ...
     // square.checkScreenBounds();
