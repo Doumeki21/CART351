@@ -2,13 +2,13 @@ window.onload = function () {
   // get the canvas
   let canvas = document.getElementById("myCanvas");
 
-  canvas.width = window.innerWidth - window.innerWidth / 100;
-  canvas.height = window.innerHeight - window.innerHeight / 100;
+  canvas.width = window.innerWidth - window.innerWidth / 100 * 50;
+  canvas.height = window.innerHeight - window.innerHeight / 100 * 50;
 
   //get the context
   let context = canvas.getContext("2d");
 
-  let file = new File("#8ED6FF");
+  let file = new File("#708a81");
   //   file.fileColor();
 
   let square = new Square(10, 10, context);

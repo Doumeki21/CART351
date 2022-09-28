@@ -1,13 +1,22 @@
-/* html, body {
-    margin: 0;
-    padding: 0%;
-  } */
+html,
+body {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0%;
+  text-align: center;
+}
 
-  /* REF: centering from stackoverflow */
-  canvas {
-    background: #ffe3c0;
-    padding: 0;
-    margin: auto;
-    display: block;
-    width: 800px;
-  }
+/* REF: centering from stackoverflow */
+canvas {
+  background: #e5d1b8;
+  width: 50%;
+  height: 50%;
+}
+
+/* #myCanvas {
+  display: block;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  } */

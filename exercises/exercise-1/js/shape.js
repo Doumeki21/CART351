@@ -1,9 +1,9 @@
+// The object class
 class Square {
   constructor(x, y, context) {
     this.localCanvasContext = context;
-    this.fillColor = "#8ED6FF";
-    this.strokeColor = "#FFFFFF";
-
+    this.fillColor = "#708a81";
+    this.strokeColor = "#dddddd";
     this.centerX = x;
     this.centerY = y;
     //new vars for speed:
@@ -28,16 +28,15 @@ class Square {
     }
   }
 
-  //   mouse
-  checkBounds(localCanvas) {
-    if (this.x > localCanvas.width || this.x < 0) {
-      this.speedX = this.speedX * -1;
-    }
+  // checkBounds(localCanvas) {
+  //   if (this.x > localCanvas.width || this.x < 0) {
+  //     this.speedX = this.speedX * -1;
+  //   }
 
-    if (this.y > localCanvas.height || this.y < 0) {
-      this.speedY = this.speedY * -1;
-    }
-  }
+  //   if (this.y > localCanvas.height || this.y < 0) {
+  //     this.speedY = this.speedY * -1;
+  //   }
+  // }
 
   draw(fileColor) {
     this.localCanvasContext.fillStyle = fileColor;
