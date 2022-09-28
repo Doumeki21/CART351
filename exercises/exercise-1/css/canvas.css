@@ -1,22 +1,13 @@
 html,
 body {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 2em;
   padding: 0%;
   text-align: center;
 }
 
-/* REF: centering from stackoverflow */
 canvas {
-  background: #e5d1b8;
   width: 50%;
   height: 50%;
+  border: 1px solid #ccc;
+  background: #ffe3c0;
 }
-
-/* #myCanvas {
-  display: block;
-  max-width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  } */

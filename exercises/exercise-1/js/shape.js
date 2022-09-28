@@ -1,47 +1,47 @@
-// The object class
+//The object class
 class Square {
   constructor(x, y, context) {
     this.localCanvasContext = context;
-    this.fillColor = "#708a81";
-    this.strokeColor = "#dddddd";
-    this.centerX = x;
-    this.centerY = y;
+    this.fillColor = "#8ED6FF";
+    this.strokeColor = "#FFFFFF";
+
+    this.squareX = x;
+    this.squareY = y;
     //new vars for speed:
     this.speedX = 2;
     this.speedY = 4;
   }
 
+  // to update the object (square), speed, color, and boundaries.
   update(width, height, fileColor) {
-    this.centerX += this.speedX;
-    this.centerY += this.speedY;
+    this.squareX += this.speedX;
+    this.squareY += this.speedY;
     this.draw(fileColor);
     this.checkScreenBounds(width, height);
   }
 
+  // square changes position
+  updatePosition(x, y) {
+    this.squareX = x;
+    this.squareY = y;
+  }
+
+  //Check when square rebounds
   checkScreenBounds(width, height) {
-    if (this.centerX > width || this.centerX < 0) {
+    if (this.squareX > width || this.squareX < 0) {
       this.speedX = this.speedX * -1;
     }
 
-    if (this.centerY > height || this.centerY < 0) {
+    if (this.squareY > height || this.squareY < 0) {
       this.speedY = this.speedY * -1;
     }
   }
 
-  // checkBounds(localCanvas) {
-  //   if (this.x > localCanvas.width || this.x < 0) {
-  //     this.speedX = this.speedX * -1;
-  //   }
-
-  //   if (this.y > localCanvas.height || this.y < 0) {
-  //     this.speedY = this.speedY * -1;
-  //   }
-  // }
-
+  //draw the square
   draw(fileColor) {
     this.localCanvasContext.fillStyle = fileColor;
     this.localCanvasContext.beginPath();
-    this.localCanvasContext.rect(this.centerX, this.centerY, 150, 100);
+    this.localCanvasContext.rect(this.squareX, this.squareY, 150, 100);
     this.localCanvasContext.stroke();
     this.localCanvasContext.fill();
 
