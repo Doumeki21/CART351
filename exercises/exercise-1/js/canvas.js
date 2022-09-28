@@ -9,7 +9,7 @@ window.onload = function () {
 
   //get the context
   let context = canvas.getContext("2d");
-  let file = new File("#8ED6FF");
+  let file = new File("#708a81");
   let square = new Square(10, 10, context);
   square.draw();
 

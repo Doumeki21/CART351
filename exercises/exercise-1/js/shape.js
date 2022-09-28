@@ -2,7 +2,7 @@
 class Square {
   constructor(x, y, context) {
     this.localCanvasContext = context;
-    this.fillColor = "#8ED6FF";
+    this.fillColor = "#708a81";
     this.strokeColor = "#FFFFFF";
 
     this.squareX = x;
