@@ -3,13 +3,6 @@
   font-family: sans-serif;
 }
 
-/* body::-webkit-scrollbar {
-  width: 0.25rem;
-}
-body::-webkit-scrollbar-track {
-  background-color: #000000;
-} */
-
 /* filling the page bg color */
 body {
   height: 100vh;
@@ -140,11 +133,18 @@ h1 {
 main {
   display: block;
   max-width: 28em;
-  margin-top: -15em;
+  margin-top: -10em;
   margin-left: auto;
   margin-right: auto;
   padding: 2em;
   /* background-color: red; */
+}
+
+.download {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 footer {
