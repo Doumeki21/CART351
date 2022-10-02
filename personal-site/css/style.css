@@ -58,6 +58,26 @@ li a {
   margin-right: 2rem;
 }
 
+/* UNDERLINE ANIMATION */
+/* .deskv {
+  text-decoration: none;
+  position: relative;
+}
+
+.deskv::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -20%;
+  width: 100%;
+  height: 10px;
+  background: currentColor;
+
+  transform: scaleX(0.01);
+  transform-origin: right;
+  transition: transform 250ms ease;
+} */
+
 .deskv a:hover {
   background-color: #e8dbd8;
 }

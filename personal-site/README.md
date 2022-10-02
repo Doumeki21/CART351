@@ -9,3 +9,4 @@
 - [Website layout inspiration](https://resilientwebdesign.com/)
 - [Toggle class in vanilla js](https://ryfarlane.com/article/toggle-class-vanilla-javascript)
 - [Creating and animating a hamburger icon to X](https://ryfarlane.com/article/animated-hamburger-menu-icon-to-x-close-icon-css)
+- [Hamburger transition to X](https://www.w3schools.com/howto/howto_css_menu_icon.asp)
