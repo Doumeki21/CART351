@@ -62,6 +62,32 @@ li a {
   background-color: #e8dbd8;
 }
 
+/* UNDERLINE ANIMATION */
+.fancy-link {
+  text-decoration: none;
+  color: #000000;
+  position: relative;
+}
+
+.fancy-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 100%;
+  height: 5px;
+  background: currentColor;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms ease;
+}
+
+.fancy-link:hover::after {
+  transform: scaleX(1);
+}
+/* UNDERLINE ANIMATION END */
+
 /* VERTICAL MOBILE NAVBAR */
 .mobile-navbar {
   display: none;
