@@ -1,21 +1,28 @@
-#moveMe {
+/* #moveMe {
     position: absolute;
     top: 0;
     left: 0;
-  }
+  } */
   
   .cursor {
-    /* cursor: none; */
-    z-index: 10;
-    background-color: rgba(255, 205, 199, 0.5);
-    width: 4rem;
-    height: 4rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border: 2px solid black;
+    background: rgba(188, 230, 244, 0.5);
     border-radius: 50%;
+    /* absolute so cursor follows mouse */
     position: absolute;
-    transform: translate(-5%, -5%);
+    /* center cursor to mouse */
+    transform: translate(-50%, -50%); 
     /* This helps scrolling and click links! */
     pointer-events: none;
     transition: all 0.1s ease;
+
+    z-index: 10;
     transform-origin: 100% 100%;
+  }
+
+  .link-grow {
+    transform: scale(2);
+    background: black;
   }
