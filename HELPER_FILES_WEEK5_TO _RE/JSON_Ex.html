@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--  this is the edited version -->
+<html>
+  <head>
+    <meta charset="utf-8">
+   <title>JSON LOAD EX</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- <script src="bookEx.js"></script> -->
+  <script src="bookExJson.js"></script>
+ </script>
+<style>
+
+html {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+.body-wrapper{
+  width:70%;
+  margin-left:15%;
+  background: #6699ff;
+  padding-bottom:10px;
+}
+header h2{
+  text-align:center;
+  color:white;
+  background:#3377ff;
+  padding:2px;
+
+}
+
+
+#getData{
+  background:#003cb3;
+  color:white;
+  width:115px;
+  height:25px;
+  margin:10px;
+}
+
+#result-container{
+  margin:2%;
+  background:#ccddff;
+  padding:2%;
+  display:flex;
+  flex-wrap:wrap;
+  }
+  .single-book{
+    width:40%;
+    background:#003cb3;
+    margin-left:5%;
+    padding:1%;
+    margin-bottom:2%;
+
+  }
+  .single-book-para{
+    width:95%;
+    margin:2%;
+    background:#ccddff;
+    font-size:1em;
+    color:#003cb3;
+    padding:1%;
+
+}
+.single-book-image{
+  width:75%;
+  padding-left:12%;
+  padding-right:12%;
+  padding-top:4%;
+  padding-bottom:4%;
+}
+  .detail-container{
+    width:95%;
+    margin:2%;
+    background:#ccddff;
+    font-size:1em;
+    color:#ccddff;
+    padding:1%;
+}
+  .detail-prop{
+    width:90%;
+    margin:2%;
+    background:#003cb3;
+    padding-top:5%;
+    padding-bottom:5%;
+    padding:2%;
+
+
+
+  }
+  </style>
+
+  <body>
+  <div class = "body-wrapper">
+  <header>
+  <h2> A fabulous example using json data </h2>
+  </header>
+
+  <section id = "result-container">
+  </section>
+
+</div>
+  </body>
+</html>

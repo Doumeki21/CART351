@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+   <title>JSON LOAD EX</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script>
+   $(document).ready(function(){
+   let header = $('header');
+   let section = $('section');
+   let loaded=false;
+
+  $("#getData").click(function(event){
+     if(loaded ===false){
+      console.log("clicked");
+
+      $.getJSON('loadFiles/books.json',function(data) {
+          //success
+            //step 1: console.log the result
+            console.log(data);
+            //set boolean to true
+            loaded=true;
+          })
+          //fail
+          .fail(function() {
+            console.log( "error" );
+          });
+
+      // $('#result-container').load('loadFiles/result.txt');
+      // $('#result-container').load('loadFiles/result.html',callbackF);
+      // $('#result-container').load('loadFiles/result.json', callbackH);
+      // loaded = true
+
+       }
+       else{
+        console.log("data was loaded");
+       }
+
+       function populateHeader(data){
+      let sampleHeader = $("<h1>");
+      $(sampleHeader).text(data.Label);
+      $(sampleHeader).appendTo(header);
+ 
+    }
+ 
+    function showBooks(data){
+      let resultContainer = $("#result-container");
+      for(let i = 0; i< data.BookItems.length;i++ ){
+      displaySingle(data.BookItems[i],resultContainer);
+    }
+ 
+    }
+/** remember this??? */
+    function displaySingle(book,parentContainer){
+ 
+         //make the book container and append to parent
+         let singleBookContainer = $("<article>").addClass("single-book").appendTo(parentContainer);
+       $.each(book, function( index, value ) {
+ 
+ 
+         if(index ==="Detail"){
+ 
+           //console.log(value)
+           let detailContainer = $("<div>").addClass("detail-container").appendTo(singleBookContainer);
+ 
+           $.each(value, function( indexDetail, valueDetail ) {
+           //  console.log(indexDetail);
+             //console.log(valueDetail);
+             let detailProperty = $("<p>").addClass("detail-prop");
+ 
+             detailProperty.html(`${indexDetail} : ${valueDetail}`);
+             $(detailProperty).appendTo(detailContainer);
+ 
+         });
+       }//if Detail
+ 
+       else if(index ==="Edition_Years"){
+         let editionYearsPara =  $("<p>").addClass("single-book-para").appendTo(singleBookContainer);
+         let label =  $("<span>").addClass("single-year-test").appendTo(editionYearsPara);
+         label.text("Editions: ");
+         theContentArray = value;
+ 
+         for(let i = 0; i<theContentArray.length; i++){
+           let singleYear =  $("<span>").addClass("single-year-test").appendTo(editionYearsPara);
+           singleYear.text(`*${theContentArray[i]}*-`);
+         }
+       }
+       else if(index ==="Book_Image"){
+         //show the image ...
+           let detailImage = $("<img>").addClass("single-book-image").appendTo(singleBookContainer);
+           $(detailImage).attr("src",value)
+       }
+       //default
+       else{
+         let bookPropertyPara = $("<p>").addClass("single-book-para").appendTo(singleBookContainer);
+         bookPropertyPara.html(`${index} : ${value}`);
+       }
+     });
+    } //display single
+    });
+
+    function callbackF(){
+          console.log("data was loaded into the result div");
+          // now do stuff in the canvas that was loaded!
+        // get the canvas
+        let canvas = document.getElementById("testCanvas");
+ 
+        //get the context
+        let context = canvas.getContext("2d");
+        context.fillStyle = "rgba(255,255,255,255)";
+        // can use properties of the canvas object -> width, height ...
+        console.log(canvas);
+        context.fillRect(canvas.width/2,canvas.height/2,50,50);
+        context.clearRect(canvas.width/2+12.5,canvas.height/2+12.5,25,25);
+        }
+
+        function callbackH(){
+          console.log("data was loaded into the result div");
+        }
+  });
+
+   </script>
+<style>
+
+
+  html {
+    font-family: 'helvetica neue', helvetica, arial, sans-serif;
+  }
+  .body-wrapper{
+    width:70%;
+    margin-left:15%;
+    background: #6699ff;
+    padding-bottom:10px;
+  }
+  header h1{
+    text-align:center;
+    color:white;
+    background:#3377ff;
+    padding:2px;
+
+  }
+
+#getData{
+    background:#003cb3;
+    color:white;
+    width:115px;
+    height:25px;
+    margin:25px;
+  }
+
+  #result-container{
+    margin:2%;
+    background:#ccddff;
+    padding:2%;
+    display:flex;
+    flex-wrap:wrap;
+    }
+    .single-book{
+      width:40%;
+      background:#003cb3;
+      margin-left:5%;
+      padding:1%;
+      margin-bottom:2%;
+
+    }
+    .single-book-para{
+      width:95%;
+      margin:2%;
+      background:#ccddff;
+      font-size:1em;
+      color:#003cb3;
+      padding:1%;
+
+  }
+  .single-book-image{
+    width:75%;
+    padding-left:12%;
+    padding-right:12%;
+    padding-top:4%;
+    padding-bottom:4%;
+  }
+    .detail-container{
+      width:95%;
+      margin:2%;
+      background:#ccddff;
+      font-size:1em;
+      color:#ccddff;
+      padding:1%;
+  }
+    .detail-prop{
+      width:90%;
+      margin:2%;
+      background:#003cb3;
+      padding-top:5%;
+      padding-bottom:5%;
+      padding:2%;
+
+
+
+    }
+    </style>
+
+
+    <body>
+    <div class = "body-wrapper">
+    <input type="button" id="getData" value="Load Data" />
+        <header>
+
+        </header>
+        <section id = "result-container">
+        </section>
+  </div>
+    </body>
+</html>

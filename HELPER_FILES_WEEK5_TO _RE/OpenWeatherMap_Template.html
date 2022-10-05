@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!-- https://home.openweathermap.org/ -->
+<html>
+  <head>
+    <title>Open Weather Example</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100%;
+        background: #97d9ff;
+      }
+      .flexSearch {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 75%;
+        margin-left: 12%;
+      }
+
+      .flexSearch > .searchCrit {
+        width: 45%;
+        padding: 15px;
+        margin: 1%;
+        border-radius: 5px;
+        background: #b5e4ff;
+        color: #336b8c;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .searchCrit > p {
+        background: red;
+        padding: 5px;
+        margin-bottom: 2px;
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      header {
+        margin-top: 2%;
+        margin-bottom: 15px;
+        color: #336b8c;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 22%;
+        width: 75%;
+      }
+
+      #contentContainer {
+        display: flex;
+        flex-wrap: wrap;
+        width: 75%;
+        margin-left: 12%;
+        background: #b5e4ff;
+        border-radius: 12px;
+        padding: 5px;
+      }
+      #titleContainer {
+        width: 100%;
+        text-align: center;
+        color: white;
+      }
+
+      #titleContainer h2 {
+        margin-top: 2%;
+        margin-left: 30%;
+        margin-right: 30%;
+        color: #336b8c;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+
+      #contentContainer > .aCellImage {
+        width: 10%;
+        margin-left: 1%;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 4px;
+      }
+
+      #contentContainer > .aCell {
+        width: 80%;
+        color: white;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 5%;
+        margin-top: 2%;
+      }
+
+      img {
+        width: 80%;
+      }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        //http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={APIKEY}
+        let myKey = "0bef928982350078b0d564afdd383f25";
+
+        $("#searchButton").click(getWeatherByCity);
+        $("#buttonLocation").click(getWeatherByLoc);
+
+        /**** get weather by user location **/
+        function getWeatherByLoc() {
+          console.log("get loc");
+        }
+
+        /**** get weather by city input **/
+        function getWeatherByCity() {
+          console.log("get city");
+
+          $("#titleContainer").empty();
+          $("#contentContainer").empty();
+          let searchCity = $("#citySearch").val();
+          console.log(searchCity);
+          //query using city vlue from search
+          let urlCity =
+            "api.openweathermap.org/data/2.5/weather?q=" + searchCity;
+          let urlToSend = "https:" + urlCity + "&APPID=" + myKey;
+
+          // url and callback
+          // results = javascript object.
+          $.getJSON(urlToSend, function (results) {
+            displayResults(results, searchCity);
+          })
+            //fail
+            .fail(function () {
+              console.log("error");
+            });
+          // getJSON
+        } //getWeather
+
+        function displayResults(results, searchCity) {
+          console.log("ALL RESULTS::" + results);
+          let imageContainer = $("<div>").addClass("aCellImage");
+          let textContainer = $("<div>").addClass("aCell");
+          imageContainer.appendTo("#contentContainer");
+          textContainer.appendTo("#contentContainer");
+
+          //1: the HEADER
+          let sampleH = $("<h2>");
+          $(sampleH).text("results for:: " + searchCity);
+
+          let weatherProp = results.weather; //PART OF THE JSON OBJECT
+          // get first ...
+          console.log("results.weather:: ");
+          console.log(weatherProp);
+          //IS AN ARRAY...
+          $(sampleH).appendTo("#titleContainer");
+
+          // go through the array (is an array of objects)
+          for (let i = 0; i < weatherProp.length; i++) {
+            //get the object
+            let weatherObj = weatherProp[i];
+            console.log("in the array each prop in weatherProp:: ");
+            console.log(weatherObj);
+            // iterate through the key-value pairs for this object
+            //property -> key:
+            //weatherObj[property] is the value
+
+            for (let property in weatherObj) {
+              //if it is the icon property-> get the image
+              if (property === "icon") {
+                let iconUrl =
+                  "http://openweathermap.org/img/w/" +
+                  weatherObj[property] +
+                  ".png";
+                let imageIcon = $("<img>");
+                $(imageIcon).attr("src", iconUrl);
+                $(imageIcon).appendTo(imageContainer);
+              }
+              //not icon - so get the text
+              else {
+                let sampleP = $("<p>").addClass("pRes");
+                $(sampleP).text(property + ":: " + weatherObj[property]);
+                $(sampleP).appendTo(textContainer);
+              }
+            } //for
+          } //iterate over array
+
+          /* just output the other properties in result to the console... */
+          console.log("results.main:: ");
+          console.log(results.main);
+          for (let property in results.main) {
+            console.log("additional property:: ");
+            console.log(property);
+            console.log("value::  ");
+            console.log(results.main[property]);
+
+            //ADD IN TEMPERATURE
+            if (property === "temp") {
+              let sampleP = $("<p>").addClass("pRes");
+              // CONVERT FROM KELVIN (absolute temp) to CELSIUS
+              let res = Math.floor(results.main[property] - 273);
+              $(sampleP).text(property + ":: " + res + " degrees celsius");
+              $(sampleP).appendTo(textContainer);
+            }
+          }
+        }
+
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(usePosition);
+        } else {
+          console.log("Geolocation is not supported by this browser.");
+        }
+
+        function usePosition(position) {
+          console.log(
+            "Latitude: " +
+              position.coords.latitude +
+              "Longitude: " +
+              position.coords.longitude
+          );
+        } //function usePosition
+      });
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Enter in the search criteria for weather:</h1>
+    </header>
+    <div class="flexSearch">
+      <div class="searchCrit">
+        <p>Enter in your search city:</p>
+        <input type="text" id="citySearch" value="city" />
+        <input type="button" value="Search!" id="searchButton" />
+      </div>
+
+      <div class="searchCrit">
+        <p>Or search automatically by your geo location:</p>
+        <input type="button" value="Search!" id="buttonLocation" />
+      </div>
+    </div>
+
+    <div id="ResWeather">
+      <div id="titleContainer"></div>
+      <div id="contentContainer"></div>
+    </div>
+  </body>
+</html>
