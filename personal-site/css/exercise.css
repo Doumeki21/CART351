@@ -16,6 +16,7 @@ body {
 /* w3schools nav bar */
 .desktop-navbar {
   position: fixed;
+  z-index: 50;
   width: 100%;
   top: 0;
   margin-left: auto;
@@ -166,7 +167,9 @@ li a {
     display: block;
   }
 }
-
+header {
+  /* position: relative; */
+}
 /* THE HERO SECTION */
 #hero-section {
   display: block;

@@ -28,7 +28,9 @@
     <link rel="stylesheet" href="css/cursor.css" />
 
     <!-- scripts -->
-    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/dropdown.js"></script>
+    <!-- <script src="js/script.js"></script> -->
     <title>CART351 Personal Website</title>
   </head>
   <body>
@@ -51,21 +53,24 @@
     </nav>
 
     <main>
-      <a class="btn btn-decor" href="#">* | Proposal</a>
+      <a class="btn btn-decor" href="#project">Project</a>
+      <a id="button" class="btn btn-decor">* | Proposal</a>
+      <div id="dropdown-container">
       <ul class="content-table">
         <li class="fancy-link"><a href="#">Description</a></li>
         <li class="fancy-link"><a href="#storyboard">Visual Storyboard</a></li>
-        <li class="fancy-link">
-          <a href="#similar">Similar Projects</a>
-          <ul>
+        <li class="fancy-link"><a href="#difference">How Will It Be Different</a></li>
+        <li id="similar-project" class="fancy-link"><a href="#similar">*|Similar Projects</a>
+          <ul id="sub-dropdown-container" class="content-table">
             <li class="fancy-link"><a href="#loneliness">Loneliness: A Social Story</a></li>
             <li class="fancy-link"><a href="#blast-theory">Can You See Me Now</a></li>
             <li class="fancy-link"><a href="#footprint">Carbon Footprint Calculator</a></li>
           </ul>
         </li>
-        <li class="fancy-link"><a href="#difference">How Will It Be Different</a></li>
+        
       </ul>
-      <a class="btn btn-decor" href="#project">Project</a>
+    </div>
+      
 
       <h1>Power Play</h1>
       <p class="members">Olenka Yuen & Shayne Laroque</p>
