@@ -50,12 +50,12 @@
     </nav>
 
     <main>
-      <a class="btn btn-decor" href="#proposal">* | Proposal</a>
-      <ul>
-        <li class="fancy-link"><a href="#description">Description</a></li>
+      <a class="btn btn-decor" href="#">* | Proposal</a>
+      <ul class="content-table">
+        <li class="fancy-link"><a href="#">Description</a></li>
         <li class="fancy-link"><a href="#storyboard">Visual Storyboard</a></li>
       </ul>
-      <a class="btn btn-decor" href="#">Project</a>
+      <a class="btn btn-decor" href="#project">Project</a>
 
       <h1 id="description">Description</h1>
       <p>
@@ -66,15 +66,40 @@
       </p>
       <br />
       <h1 id="storyboard">Visual Storyboard</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
-      </p>
+
+        <div class="slidershow middle">
+          <div class="slides">
+            <input type="radio" name="r" id="r1" checked />
+            <input type="radio" name="r" id="r2" />
+            <input type="radio" name="r" id="r3" />
+            <input type="radio" name="r" id="r4" />
+            <input type="radio" name="r" id="r5" />
+
+            <div class="slide s1">
+              <img src="assets/images/storyboard-part1.jpg" alt="" />
+            </div>
+            <div class="slide">
+              <img src="assets/images/storyboard-part2.jpg" alt="" />
+            </div>
+            <div class="slide">
+              <img src="assets/images/storyboard-part3.jpg" alt="" />
+            </div>
+            <div class="slide">
+              <img src="assets/images/storyboard-part4.jpg" alt="" />
+            </div>
+            <div class="slide">
+              <img src="assets/images/storyboard-part5.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="navigation">
+          <label for="r1" class="bar"></label>
+          <label for="r2" class="bar"></label>
+          <label for="r3" class="bar"></label>
+          <label for="r4" class="bar"></label>
+          <label for="r5" class="bar"></label>
+        </div>
+
       <br />
       <h1>Similar projects</h1>
     </main>
