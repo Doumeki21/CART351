@@ -29,14 +29,14 @@ function cursor(e) {
   mouseCursor.style.left = e.pageX + "px";
 }
 
-// create array to track when the mouse is hovering on any link
-navLinks.forEach(link => {
-  link.addEventListener("mouseleave", () => {
-    // this class list is created and will be reffered in the css.
-    mouseCursor.classList.remove("link-grow");
-  });
-  link.addEventListener("mouseover", () => {
-    // this class list is created and will be reffered in the css.
-    mouseCursor.classList.add("link-grow");
-  });
-});
+// // create array to track when the mouse is hovering on any link
+// navLinks.forEach(link => {
+//   link.addEventListener("mouseleave", () => {
+//     // this class list is created and will be reffered in the css.
+//     mouseCursor.classList.remove("link-grow");
+//   });
+//   link.addEventListener("mouseover", () => {
+//     // this class list is created and will be reffered in the css.
+//     mouseCursor.classList.add("link-grow");
+//   });
+// });
