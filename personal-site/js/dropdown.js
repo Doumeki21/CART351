@@ -12,12 +12,10 @@ $(document).ready(function () {
   // 2
   // keep the dropdown contents visible while the mouse is hovering overing it.
   $("#dropdown-container").on("mouseover", function () {
-    console.log("hover");
     $("#dropdown-container").show();
   });
   // hide the dropdown contents when mouse leaves the area.
   $("#dropdown-container").on("mouseout", function () {
-    console.log("out");
     $("#dropdown-container").hide();
   });
 

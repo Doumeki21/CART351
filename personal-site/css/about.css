@@ -15,6 +15,7 @@ body {
 /* HORIZONTAL WEB NAVBAR */
 /* w3schools nav bar */
 .desktop-navbar {
+  z-index: 5;
   position: fixed;
   width: 100%;
   top: 0;
