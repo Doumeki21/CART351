@@ -16,7 +16,7 @@ body {
 /* w3schools nav bar */
 .desktop-navbar {
   position: fixed;
-  z-index: 50;
+  z-index: 5;
   width: 100%;
   top: 0;
   margin-left: auto;
@@ -106,7 +106,7 @@ li a {
   width: 100%;
   height: 100%;
   bottom: 0;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   /* z-index: -1; */
   transition: transform 100ms ease-in;
 
