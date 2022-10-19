@@ -10,7 +10,7 @@ class TriangleShape {
     //made into a method so that at any time we can update the triangle ...
     this.centerX = x;
     this.centerY = y;
-    this.setPoints(this.centerX, this.centerY);
+    this.setPoints(this.centerX/2, this.centerY/2);
     //new vars for speed:
     this.speedX = 2;
     this.speedY = 4;
