@@ -69,13 +69,13 @@ $(document).ready(function() {
 let firstTime = true;
 let flickerAPI ="https://www.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
 
-$("#searchButton").click(getFlicker);
+$("#searchButton").click(getFlicker); // the callback
 /**** function callback from button ***/
 function getFlicker()
 {
-  $("#images").empty(); //empty
+  $("#images").empty(); //empty the imgs everytime u run the server. 
 
-  let searchItem = $("#searchText").val();
+  let searchItem = $("#searchText").val(); //access the input field
   console.log(searchItem);
   $.getJSON(flickerAPI, {tags: searchItem,tagmode: "any",format: "json"},displayResults)
       //fail

@@ -1,0 +1,48 @@
+body {
+  font-family: sans-serif;
+  background-color: #efefef;
+  margin-left: 20em;
+  margin-right: 20em;
+}
+
+.exercise-container {
+  border-radius: 20px;
+  margin-top: 5%;
+  padding-top: 5%;
+  padding: 5%;
+  text-align: center;
+  color: #efefef;
+  background-color: #433a57;
+}
+
+/* displayes the text results */
+#results-container {
+  margin: 2em;
+  padding-top: 1em;
+  background-color: rgba(250, 235, 215, 0.2);
+}
+
+/* https://www.kirupa.com/html5/looping_a_css_transition.htm */
+/* higher the stress level, the faster the animation! */
+/* #pulse-container {
+  position: relative;
+} */
+
+#pulse {
+  background-color: #2693ff;
+  border-radius: 75px;
+  height: 150px;
+  margin: 100px auto auto;
+  width: 150px;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.state-one {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+.state-two {
+  opacity: 0.5;
+  transform: scale(2, 2);
+}
+
+/*1,1-5,0.7 = friday,  1-1.2 = saturday,  1-1.5 = sunday, 1-2 = monday*/

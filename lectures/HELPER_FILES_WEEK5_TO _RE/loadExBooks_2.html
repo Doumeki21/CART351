@@ -14,10 +14,15 @@
      if(loaded ===false){
       console.log("clicked");
 
+      // the data is only reasy inside the callback.
       $.getJSON('loadFiles/books.json',function(data) {
           //success
             //step 1: console.log the result
             console.log(data);
+            //step 2: display header on html page
+            populateHeader(data);
+            //step 3: display the books ....
+            showBooks(data);
             //set boolean to true
             loaded=true;
           })
