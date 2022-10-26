@@ -19,6 +19,7 @@ body {
 #results-container {
   margin: 2em;
   padding-top: 1em;
+  padding-bottom: 1em;
   background-color: rgba(250, 235, 215, 0.2);
 }
 
@@ -41,6 +42,21 @@ body {
   transform: scale(1, 1);
 }
 .state-two {
+  opacity: 0.5;
+  transform: scale(5, 0.7);
+}
+
+.state-three {
+  opacity: 0.5;
+  transform: scale(1.2, 1.2);
+}
+
+.state-four {
+  opacity: 0.5;
+  transform: scale(1.5, 1.5);
+}
+
+.state-five {
   opacity: 0.5;
   transform: scale(2, 2);
 }
