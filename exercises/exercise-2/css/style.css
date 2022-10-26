@@ -23,11 +23,20 @@ body {
   background-color: rgba(250, 235, 215, 0.2);
 }
 
+form {
+  font-size: 1.5em;
+}
+
+#submit-button {
+  border-radius: 5px;
+}
+
 /* https://www.kirupa.com/html5/looping_a_css_transition.htm */
 /* higher the stress level, the faster the animation! */
-/* #pulse-container {
-  position: relative;
-} */
+#pulse-container {
+  /* position: relative; */
+  margin: 5em;
+}
 
 #pulse {
   background-color: #2693ff;
@@ -39,26 +48,26 @@ body {
 }
 .state-one {
   opacity: 1;
-  transform: scale(1, 1);
+  transform: scale(1);
 }
 .state-two {
   opacity: 0.5;
-  transform: scale(5, 0.7);
+  transform: scale(2.5);
 }
 
 .state-three {
   opacity: 0.5;
-  transform: scale(1.2, 1.2);
+  transform: scale(1.2);
 }
 
 .state-four {
   opacity: 0.5;
-  transform: scale(1.5, 1.5);
+  transform: scale(1.5);
 }
 
 .state-five {
   opacity: 0.5;
-  transform: scale(2, 2);
+  transform: scale(2);
 }
 
 /*1,1-5,0.7 = friday,  1-1.2 = saturday,  1-1.5 = sunday, 1-2 = monday*/

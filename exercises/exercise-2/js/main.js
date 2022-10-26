@@ -1,9 +1,10 @@
 $(document).ready(function () {
   let transtate = "state-two";
-  
 
   $("#choose-day").submit((e) => {
     e.preventDefault(); //prevents the form from returning to its initial state after the page reloads from triggering the submit btn.
+
+    // transition to different pulse states based on the day of the week. 
     let dayValue = $("#week-day").val();
     if (dayValue === "Friday") {
       transtate = "state-one";
@@ -19,16 +20,30 @@ $(document).ready(function () {
     }
     console.log(transtate);
 
-    
+    // window.requestAnimationFrame(loop);
+    // let scaleVal = 1;
+    // let time = 0.005;
 
-    $(`#results-container`).empty(); //resets the results.
+    // function loop() {
+    //   if (scaleVal < 1 || scaleVal > 1) {
+    //     time *= -1;
+    //   }
+    //   // document.getElementById("content").style.width = `${width}px`;
+    //   // document.getElementById("content").style.height = `${width}px`;
+    //   document.getElementById(
+    //     "pulse"
+    //   ).style.transform = `scale(${scaleVal},${scaleVal})`;
+    //   scaleVal += time;
+    //   window.requestAnimationFrame(loop);
+    // }
+
+    $(`#results-container`).empty(); //resets the results every load.
 
     // get the json data.
     $.getJSON("loadFiles/stress.json", function (data) {
       // set boolean to true
       loaded = true;
       findDayData(data, dayValue);
-
     })
       // fail
       .fail(function () {
@@ -44,13 +59,16 @@ $(document).ready(function () {
     textDay.addClass("text-day").appendTo("#results-container");
   }
 
-  // Does what the filter function
-
+  // Does what the filter function does.
   function findDayData(data, dayValue) {
     for (let i = 0; i < data.days.length; i++) {
       $.each(data.days[i], function (index, value) {
         if (value === dayValue) {
-          displayDay(data.days[i].day, data.days[i].quality,data.days[i].sleep);
+          displayDay(
+            data.days[i].day,
+            data.days[i].quality,
+            data.days[i].sleep
+          );
         }
       });
     }
@@ -71,10 +89,9 @@ $(document).ready(function () {
   let theCircle = document.querySelector("#pulse");
 
   function setup() {
-  //   console.log( document.getElementById("submit-button"));
-  //  document.getElementById("submit-button").addEventListener("click", setInitialClass, false);
-   theCircle.addEventListener("mouseover", setInitialClass, false);
-
+    //   console.log( document.getElementById("submit-button"));
+    //  document.getElementById("submit-button").addEventListener("click", setInitialClass, false);
+    theCircle.addEventListener("mouseover", setInitialClass, false);
 
     theCircle.addEventListener("transitionend", loopTransition, false);
     theCircle.addEventListener("webkitTransitionEnd", loopTransition, false);
@@ -86,7 +103,7 @@ $(document).ready(function () {
 
   function setInitialClass(e) {
     theCircle.className = transtate;
-    console.log(theCircle.className);
+    // console.log(theCircle.className);
   }
 
   function loopTransition(e) {
