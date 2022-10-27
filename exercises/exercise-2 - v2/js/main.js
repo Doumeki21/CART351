@@ -1,23 +1,32 @@
 $(document).ready(function () {
   let transtate = "state-two";
-  // let circleState = "state-two";
   let scaleVal = 1;
   let speed = 0.01;
   let circleScale = 1;
+  let opacityVal = 0.5;
 
-  window.requestAnimationFrame(loop);
+  window.requestAnimationFrame(loop); //callback to loop the animation 
 
-    function loop() {
-      if (scaleVal < 0.5 || scaleVal > circleScale) {
-        speed *= -1;
-      }
-      console.log(scaleVal);
-      // document.getElementById("content").style.width = `${width}px`;
-      // document.getElementById("content").style.height = `${width}px`;
-      document.getElementById("pulse").style.transform = `scale(${scaleVal})`;
-      scaleVal += speed;
-      window.requestAnimationFrame(loop);
+  // animate the pulsating circle.
+  function loop() {
+    if (scaleVal < 0.5 || scaleVal > circleScale) {
+      speed *= -1;
     }
+    if (scaleVal <= 0.6) {
+      opacityVal = 0.1;
+    } 
+    else if (scaleVal > 0.6 && scaleVal < 1) {
+      opacityVal = 0.5;
+    } 
+    else {
+      opacityVal = 1;
+    }
+
+    document.getElementById("pulse").style.transform = `scale(${scaleVal})`;
+    document.getElementById("pulse").style.opacity = opacityVal;
+    scaleVal += speed;
+    window.requestAnimationFrame(loop);
+  }
 
   $("#choose-day").submit((e) => {
     e.preventDefault(); //prevents the form from returning to its initial state after the page reloads from triggering the submit btn.
@@ -25,35 +34,51 @@ $(document).ready(function () {
     // transition to different pulse states based on the day of the week.
     let dayValue = $("#week-day").val();
     if (dayValue === "Friday") {
-      transtate = "state-two";
+      document.getElementById("pulse").style.backgroundColor = '#ff0000'; //changecolor
+      transtate = "state-two"; 
       circleScale = 0.8;
       speed = 0.08;
       if (scaleVal > 0.8) {
-        scaleVal = 0.8;
+        scaleVal = 0.8; //so that the scale doesn't conflict with the next/ previous day.
+      }
+      if (scaleVal < 0.5) {
+        scaleVal = 0.5;
       }
     }
     if (dayValue === "Saturday") {
+      document.getElementById("pulse").style.backgroundColor = '#2693ff';
       transtate = "state-three";
       circleScale = 1.5;
       speed = 0.02;
       if (scaleVal > 1.5) {
         scaleVal = 1.5;
       }
+      if (scaleVal < 0.5) {
+        scaleVal = 0.5;
+      }
     }
     if (dayValue === "Sunday") {
+      document.getElementById("pulse").style.backgroundColor = '#2693ff';
       transtate = "state-four";
       circleScale = 1.1;
       speed = 0.02;
-      if (scaleVal > 1.2) {
-        scaleVal = 1.2;
+      if (scaleVal > 1.1) {
+        scaleVal = 1.1;
+      }
+      if (scaleVal < 0.5) {
+        scaleVal = 0.5;
       }
     }
     if (dayValue === "Monday") {
+      document.getElementById("pulse").style.backgroundColor = '#ff0000';
       transtate = "state-five";
       circleScale = 1;
       speed = 0.05;
       if (scaleVal > 1) {
         scaleVal = 1;
+      }
+      if (scaleVal < 0.5) {
+        scaleVal = 0.5;
       }
     }
 
@@ -93,48 +118,4 @@ $(document).ready(function () {
       });
     }
   }
-
-  // // JQUERY ANIMATE
-  // $( "#submit-button" ).click(function() {
-  //   $( "#pulse" ).animate({
-  //     opacity: 0.5,
-  //     transform: "toggle"
-  //   }, 5000, function() {
-  //     // Animation complete.
-  //   });
-  // });
-
-  // https://www.kirupa.com/html5/looping_a_css_transition.htm
-  //   1. TRIGGER THE PULSE ANIMATION
-  let theCircle = document.querySelector("#pulse");
-
-  function setup() {
-    //   console.log( document.getElementById("submit-button"));
-    //  document.getElementById("submit-button").addEventListener("click", setInitialClass, false);
-    theCircle.addEventListener("mouseover", setInitialClass, false);
-
-    // theCircle.addEventListener("transitionend", loopTransition, false);
-    // theCircle.addEventListener("webkitTransitionEnd", loopTransition, false);
-    // theCircle.addEventListener("mozTransitionEnd", loopTransition, false);
-    // theCircle.addEventListener("msTransitionEnd", loopTransition, false);
-    // theCircle.addEventListener("oTransitionEnd", loopTransition, false);
-  }
-  setup();
-
-  function setInitialClass(e) {
-    // theCircle.className = transtate;
-    // console.log(theCircle.className);
-  }
-
-  // function loopTransition(e) {
-  //   // alternate b/w classes
-  //   // console.log(transtate);
-  //   if (e.propertyName == "opacity") {
-  //     if (theCircle.className == transtate) {
-  //       theCircle.className = "state-one";
-  //     } else {
-  //       theCircle.className = transtate;
-  //     }
-  //   }
-  // }
 });

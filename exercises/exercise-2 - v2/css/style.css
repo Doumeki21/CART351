@@ -29,6 +29,24 @@ form {
 
 #submit-button {
   border-radius: 5px;
+  font-size: 1em;
+  background-color: #dd3535;
+
+  border: none;
+  color: white;
+  padding: 20px;
+  /* text-decoration: none; */
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* dropdown selection */
+select {
+  background-color: rgb(250, 215, 215);
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 1em;
+  cursor: pointer;
 }
 
 /* https://www.kirupa.com/html5/looping_a_css_transition.htm */
@@ -48,28 +66,3 @@ form {
   transition: transform ease-in-out, opacity 0.4s ease-in-out;
   /* transform: scale(); */
 }
-.state-one {
-  opacity: 1;
-  transform: scale(1);
-}
-.state-two {
-  opacity: 0.5;
-  transform: scale(2.5);
-}
-
-.state-three {
-  opacity: 0.5;
-  transform: scale(1.2);
-}
-
-.state-four {
-  opacity: 0.5;
-  transform: scale(1.5);
-}
-
-.state-five {
-  opacity: 0.5;
-  transform: scale(2);
-}
-
-/*1,1-5,0.7 = friday,  1-1.2 = saturday,  1-1.5 = sunday, 1-2 = monday*/
