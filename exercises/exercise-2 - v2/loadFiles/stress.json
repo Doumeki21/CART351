@@ -1,0 +1,28 @@
+{
+  "days": [
+    {
+      "day": "Friday",
+      "stress": "10",
+      "sleep": "4",
+      "quality": "super stressful"
+    },
+    {
+      "day": "Saturday",
+      "stress": "3",
+      "sleep": "10",
+      "quality": "restful"
+    },
+    {
+      "day": "Sunday",
+      "stress": "5",
+      "sleep": "8",
+      "quality": "decent"
+    },
+    {
+      "day": "Monday",
+      "stress": "8",
+      "sleep": "7",
+      "quality": "stressful"
+    }
+  ]
+}

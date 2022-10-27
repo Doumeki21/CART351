@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="css/style.css" rel="stylesheet">
+    <title>Exercise 2</title>
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+  <script></script>
+  <body>
+    <div class="exercise-container">
+      <h2 id="description">
+        This exercise tracks my stress levels over the course of 4 days.
+      </h2>
+
+      <form id="choose-day">            
+        <label for="day">Choose a day: </label>
+        <!-- <br> -->
+        <select id="week-day" name="day">
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+          <option value="Monday">Monday</option>
+        </select>
+      
+        <input type="submit" value = "Submit" id="submit-button">
+      </form>
+
+      <div id="pulse-container">
+        <div id="pulse" class="state-one"></div>
+      </div>
+
+      <div id="results-container"></div>
+    </div>
+  </body>
+</html>
