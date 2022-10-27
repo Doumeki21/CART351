@@ -1,0 +1,68 @@
+body {
+  font-family: sans-serif;
+  background-color: #efefef;
+  margin-left: 20em;
+  margin-right: 20em;
+}
+
+.exercise-container {
+  border-radius: 20px;
+  margin-top: 5%;
+  padding-top: 5%;
+  padding: 5%;
+  text-align: center;
+  color: #efefef;
+  background-color: #433a57;
+}
+
+/* displayes the text results */
+#results-container {
+  margin: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: rgba(250, 235, 215, 0.2);
+}
+
+form {
+  font-size: 1.5em;
+}
+
+#submit-button {
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #dd3535;
+
+  border: none;
+  color: white;
+  padding: 20px;
+  /* text-decoration: none; */
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* dropdown selection */
+select {
+  background-color: rgb(250, 215, 215);
+  border-radius: 20px;
+  padding: 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* https://www.kirupa.com/html5/looping_a_css_transition.htm */
+/* higher the stress level, the faster the animation! */
+#pulse-container {
+  /* position: relative; */
+  margin: 5em;
+}
+
+#pulse {
+  background-color: #2693ff;
+  border-radius: 75px;
+  height: 150px;
+  margin: 100px auto auto;
+  width: 150px;
+  /* transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out; */
+  transition: transform ease-in-out, opacity 0.4s ease-in-out;
+  /* transform: scale(); */
+}

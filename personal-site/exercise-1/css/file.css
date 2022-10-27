@@ -1,0 +1,20 @@
+.wrapper {
+    background: #2b2129;
+    color: white;
+    height: 100px;
+    padding: 5px;
+  }
+
+  /* responsive box */
+  #outer {
+    margin-top: 20px;
+    margin-left: 25%;
+    width: 50%;
+  }
+
+  h4 {
+    background-color: rgb(219, 217, 215);
+    margin: 0;
+    margin-top: 10px;
+    padding: 5px;
+  }
