@@ -1,5 +1,6 @@
 $(document).ready(function () {
   let transtate = "state-two";
+  // let circleState = "state-two";
 
   $("#choose-day").submit((e) => {
     e.preventDefault(); //prevents the form from returning to its initial state after the page reloads from triggering the submit btn.
@@ -7,7 +8,7 @@ $(document).ready(function () {
     // transition to different pulse states based on the day of the week. 
     let dayValue = $("#week-day").val();
     if (dayValue === "Friday") {
-      transtate = "state-one";
+      transtate = "state-two";
     }
     if (dayValue === "Saturday") {
       transtate = "state-three";
@@ -25,7 +26,7 @@ $(document).ready(function () {
     // let time = 0.005;
 
     // function loop() {
-    //   if (scaleVal < 1 || scaleVal > 1) {
+    //   if (scaleVal < 1 || scaleVal > 2) {
     //     time *= -1;
     //   }
     //   // document.getElementById("content").style.width = `${width}px`;
@@ -94,10 +95,10 @@ $(document).ready(function () {
     theCircle.addEventListener("mouseover", setInitialClass, false);
 
     theCircle.addEventListener("transitionend", loopTransition, false);
-    theCircle.addEventListener("webkitTransitionEnd", loopTransition, false);
-    theCircle.addEventListener("mozTransitionEnd", loopTransition, false);
-    theCircle.addEventListener("msTransitionEnd", loopTransition, false);
-    theCircle.addEventListener("oTransitionEnd", loopTransition, false);
+    // theCircle.addEventListener("webkitTransitionEnd", loopTransition, false);
+    // theCircle.addEventListener("mozTransitionEnd", loopTransition, false);
+    // theCircle.addEventListener("msTransitionEnd", loopTransition, false);
+    // theCircle.addEventListener("oTransitionEnd", loopTransition, false);
   }
   setup();
 
@@ -108,7 +109,7 @@ $(document).ready(function () {
 
   function loopTransition(e) {
     // alternate b/w classes
-    console.log(transtate);
+    // console.log(transtate);
     if (e.propertyName == "opacity") {
       if (theCircle.className == transtate) {
         theCircle.className = "state-one";

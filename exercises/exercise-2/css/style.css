@@ -45,6 +45,7 @@ form {
   margin: 100px auto auto;
   width: 150px;
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  /* transform: scale(); */
 }
 .state-one {
   opacity: 1;
