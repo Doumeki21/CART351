@@ -1,0 +1,6 @@
+ANIMAL:iguana
+COLOR:red
+FAVNUM:34
+ANIMAL:tiger
+COLOR:blue
+FAVNUM:45
