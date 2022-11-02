@@ -21,7 +21,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET')
    // you must exit
 exit;
 }
-
+// LINES 12-14 IS WHAT MAKES THE USER'S INPUT SEND TO THE TESTINPUT.TXT
 }
 ?>
 
