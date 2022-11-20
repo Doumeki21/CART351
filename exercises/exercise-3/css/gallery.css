@@ -10,6 +10,7 @@ Responsive Image gallery Style rules
   
   body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: bisque;
   }
   
   .container {
@@ -24,6 +25,31 @@ Responsive Image gallery Style rules
   
   .heading-text span {
     font-weight: 100;
+  }
+
+  #sketch {
+    text-align: center;
+    margin: auto;
+    /* align-items: center;
+    justify-content: center; */
+  }
+
+  .button {
+    padding: 1.5em;
+    margin-bottom: 1.1em;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 10px;
+
+    background-color: orange;
+    border: none;
+    opacity: .6;
+    transition: 0.1s;
+  }
+
+  .button:hover {
+    opacity: 1;
+    cursor: pointer;
   }
   
   ul {

@@ -8,6 +8,8 @@
     <!-- CSS stylesheet(s) -->
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
+    <!-- https://www.geeksforgeeks.org/how-to-draw-with-mouse-in-html-5-canvas/ -->
+
     <title>Exercise 3</title>
 
 </head>

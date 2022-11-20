@@ -12,15 +12,22 @@ h1 {
 
 section {
     padding: 40px 5%;
-
+    margin: 0;
     align-items: left;
+    background-color: burlywood;
   }
+
+  /* div {
+    margin: 0;
+  } */
 
   .button {
     padding: 1.5em;
+    align-items: left;
     margin-bottom: 1.1em;
     font-size: large;
     font-weight: bold;
+    border-radius: 10px;
 
     background-color: orange;
     border: none;
