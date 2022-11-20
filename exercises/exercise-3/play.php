@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="js/libraries/jquery-3.6.1.min.js"></script>
-    <title>Exercise 3</title>
+
+    <title>Reference</title>
 </head>
 <body>
       
