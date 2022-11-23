@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- https://www.geeksforgeeks.org/how-to-draw-with-mouse-in-html-5-canvas/ -->
+    <script src = "libraries/jquery-3.6.1.min.js"></script>
 
     <title>Exercise 3</title>
 
@@ -21,11 +22,14 @@
         <div id="submit">
             <button class ="button" onclick="submit()">Submit Masterpiece</button>
         </div>
+        <a id="imageDownloadLink"></a>
+    <img id = "imageContainer" />
     </section>
     
         <!-- <li class="right-section"> -->
             <canvas id="canvas"></canvas>
         <!-- </li> -->
+          
 
     <script>
         // THE DRAWING PAGE //
@@ -114,6 +118,6 @@
     </script>
 
     <!-- My script(s) -->
-    <!-- <script src="js/script.js"></script> -->
+    <script src="js/canvasImage.js"></script>
 </body>
 </html>
