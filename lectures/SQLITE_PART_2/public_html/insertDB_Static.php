@@ -96,14 +96,14 @@ try {
     // $file_db->exec($qA);
 
 //4: this will NOT incur a violation -eventhough the location is not in the location table  ...
-//  $qb = "INSERT INTO animalCollectionSub (artist, title, creationDate, geoLoc, descript, image,uID) VALUES ('Maria', 'cat New','2003-06-12','Hamburg','Untitled II','images/cat_stretch.jpg',5)";
-//     $file_db->exec($qb);
+ $qb = "INSERT INTO animalCollectionSub (artist, title, creationDate, geoLoc, descript, image,uID) VALUES ('Maria', 'cat New','2003-06-12','Hamburg','Untitled II','images/cat_stretch.jpg',5)";
+    $file_db->exec($qb);
 
 
 //   // if we reach this point then all the data has been inserted successfully.
 //   echo ("INSERTION OF ENTRY into animalCollection Table successful");
 //    //  Close file db connection
-//       $file_db = null;
+      $file_db = null;
 
 
   }//try

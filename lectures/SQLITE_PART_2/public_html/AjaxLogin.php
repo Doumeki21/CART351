@@ -1,7 +1,8 @@
 <?php
 // clear any sessions ...
+// KEEP A SESSION OPEN TO TRACK THE 
 session_start();
-// remove all session variables
+// remove all session TO TRACK THE USER'S ACTIVITY. 
 session_unset();
 // destroy the session
 session_destroy();
@@ -37,7 +38,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
        if ($result->fetchColumn() > 0) {
          //NO ECHOS!
 
-
+// NAKE THE HIIDDEN TEXTS.
          $sql_getTest= "SELECT userID, username, pass from users WHERE username=$user_es" ;
          $result = $file_db->query($sql_getTest);
          $row = $result->fetch(PDO::FETCH_ASSOC);
@@ -61,6 +62,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 
 
        }
+      //  WHEN USER DOESN'T EXIST
        else{
         $file_db =null;
          echo("USER MISMATCH");

@@ -26,6 +26,7 @@ echo("<p style = 'background:#004d80; width:30%; color:white;'>LOGGED IN USER ID
 echo("<p style = 'background:#004d80; width:30%; color:white;'>LOGGED IN USER NAME:: ".$_SESSION['username']."</p>");
 // now lets get all entries in the db that have the user ID...
 try {
+  // VARIABLES INSIDE DOUBLE QUOTES WILL ALL BE TREATED AS VARIABLES. 
       $sql_select="SELECT * FROM animalCollectionSub WHERE uID = '$u_id'";
       // the result set
       $result = $file_db->query($sql_select);

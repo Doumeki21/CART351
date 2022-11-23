@@ -53,7 +53,7 @@ try {
 
 
 
-  $result = $file_db->query($joinD);
+  $result = $file_db->query($testThree);
   if (!$result) die("Cannot execute query.");
   echo "<h3> QUERY RESULTS:::</h3>";
   echo"<div id='back'>";
