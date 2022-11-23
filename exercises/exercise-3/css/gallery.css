@@ -84,6 +84,7 @@ Responsive Image gallery Style rules
     height: auto;
     vertical-align: middle;
     border-radius: 5px;
+    border: solid black 2px;
   }
   
   .overlay {

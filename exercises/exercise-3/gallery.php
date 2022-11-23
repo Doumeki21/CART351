@@ -1,3 +1,8 @@
+<?php
+$imgArr = scandir("upload");
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,10 +26,17 @@
       </div>
 
       <ul class="image-gallery">
-        <li>
-          <img src="https://source.unsplash.com/VWcPlbHglYc/640x416" alt="" />
-          <div class="overlay"><span>Image title</span></div>
-        </li>
+        
+          <?php for($i=2; $i<count($imgArr);$i++){  
+
+            echo("<li>");
+
+            echo("<img src='upload/$imgArr[$i]'. alt='' />");
+
+            echo("<div class='overlay'><span>Image title</span></div>");
+            echo("</li>");
+           } ?>
+       
         <li>
           <img src="https://source.unsplash.com/e6FMMambeO4/640x416" alt="" />
           <div class="overlay"><span>Image title</span></div>

@@ -1,46 +1,46 @@
-* {
-    overflow: hidden
-}
+/* * {
+  overflow: hidden;
+} */
 
 body {
-    /* text-align: center; */
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: bisque;
+  /* text-align: center; */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: bisque;
 }
 h1 {
-    color: green;
+  color: green;
+}
+/* 
+section {
+  padding: 40px 5%;
+  margin: 0;
+  align-items: left;
+  flex-shrink: 2;
+  background-color: burlywood;
+  margin: 0;
+} */
+
+/* div {
+  flex-shrink: 1;
+  margin: 0;
+} */
+
+.button {
+  padding: 1.5em;
+  /* margin: 0; */
+  align-items: left;
+  margin-bottom: 1.1em;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 10px;
+
+  background-color: orange;
+  border: none;
+  opacity: 0.6;
+  transition: 0.1s;
 }
 
-section {
-    padding: 40px 5%;
-    margin: 0;
-    align-items: left;
-    /* background-color: burlywood; */
-  }
-
-  /* div {
-    margin: 0;
-  } */
-
-  .button {
-    padding: 1.5em;
-    align-items: left;
-    margin-bottom: 1.1em;
-    font-size: large;
-    font-weight: bold;
-    border-radius: 10px;
-
-    background-color: orange;
-    border: none;
-    opacity: .6;
-    transition: 0.1s;
-  }
-
-  .button:hover {
-    opacity: 1;
-    cursor: pointer;
-  }
-
-  #canvas {
-    background-color: white;
-  }
+.button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
