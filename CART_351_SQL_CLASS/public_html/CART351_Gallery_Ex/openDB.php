@@ -9,7 +9,7 @@ try {
   // Set errormode to exceptions
     $file_db->setAttribute(PDO::ATTR_ERRMODE,
                             PDO::ERRMODE_EXCEPTION);
-    echo("opened or connected to the database animalGallery <br>");
+    // echo("opened or connected to the database animalGallery <br>");
    }
    //to catch the error
 catch(PDOException $e) {

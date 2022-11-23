@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
 <title> Output from the Animal Gallery Database </title>
-<link rel='stylesheet' type='text/css' href='galleryStyle.css'>
+<link rel='stylesheet' type='text/css' href='css/galleryStyle.css'>
 </head>
 <body>
 <?php
@@ -13,7 +13,7 @@ try {
     $sql_selectA = "SELECT DISTINCT artist FROM animalCollection";
     $s2 = "SELECT creationDate, artist FROM animalCollection WHERE artist = 'Harold' OR artist = 'Sarah' ORDER BY creationDate";
     $s3 =  "SELECT artist, geoLoc, COUNT(*) FROM animalCollection GROUP BY artist,geoLoc";
-    // the result set
+    // the result set (query, not changing, just ask for smthg)
     $result = $file_db->query($sql_select);
     if (!$result) die("Cannot execute query.");
 

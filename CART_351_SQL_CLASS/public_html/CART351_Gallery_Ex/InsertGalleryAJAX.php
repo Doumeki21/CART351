@@ -57,6 +57,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
     //  to send them to $.ajax success  call back function... */
     // $myJSONObj = json_encode($myPackagedData);
     // echo $myJSONObj;
+
+    
     exit;
  
   }//FILES
