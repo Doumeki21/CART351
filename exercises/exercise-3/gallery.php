@@ -1,7 +1,5 @@
 <?php
 $imgArr = scandir("upload");
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +17,7 @@ $imgArr = scandir("upload");
 </head>
 <body>
 <div class="container">
-      <h2 class="heading-text">Responsive <span>image gallery</span></h2>
+      <h2 class="heading-text">The <span>Art Gallery</span></h2>
 
       <div id="sketch">
          <button class ="button" onclick="sketch()">Sketch</button>
@@ -33,58 +31,16 @@ $imgArr = scandir("upload");
 
             echo("<img src='upload/$imgArr[$i]'. alt='' />");
 
-            echo("<div class='overlay'><span>Image title</span></div>");
+            // echo("<div class='overlay'><span>Image title</span></div>");
             echo("</li>");
            } ?>
        
-        <li>
-          <img src="https://source.unsplash.com/e6FMMambeO4/640x416" alt="" />
-          <div class="overlay"><span>Image title</span></div>
-        </li>
-        <li>
-          <img src="https://source.unsplash.com/klCiPmzUw0Y/640x416" alt="" />
-          <div class="overlay"><span>Image title</span></div>
-        </li>
-        <li>
-          <img src="https://source.unsplash.com/IdNOTjPeHrE/640x416" alt="" />
-          <div class="overlay"><span>Image title</span></div>
-        </li>
-        <li>
-          <img src="https://source.unsplash.com/O0N9MF--hK4/640x416" alt="" />
-          <div class="overlay"><span>Image title</span></div>
-        </li>
-        <li>
-          <img src="https://source.unsplash.com/FV3GConVSss/640x416" alt="" />
-          <div class="overlay"><span>Image title</span></div>
-        </li>
-        <li>
-          <img src="https://source.unsplash.com/0ESjL-Nw22Y/640x416" alt="" />
-          <div class="overlay"><span>Image title</span></div>
-        </li>
-        <li>
-          <img src="https://source.unsplash.com/KTVn62x6fFw/640x416" alt="" />
-          <div class="overlay"><span>Image title</span></div>
-        </li>
-
-        <li>
-          <img src="https://source.unsplash.com/VSeVhmW4_JQ/640x416" alt="" />
-          <div class="overlay"><span>Image title</span></div>
-        </li>
-        <li>
-          <img src="https://source.unsplash.com/07aFaTf24Kg/640x416" alt="" />
-          <div class="overlay"><span>Image title</span></div>
-        </li>
-        <li>
-          <img src="https://source.unsplash.com/DqyYTM7pR2o/640x416" alt="" />
-          <div class="overlay"><span>Image title</span></div>
-        </li>
       </ul>
     </div>
 
     <script>
       function sketch() {
         window.location.href = 'index.php';
-
       }
     </script>
 </body>

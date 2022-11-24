@@ -1,8 +1,10 @@
+<!-- Sabine's code sample -->
 <?php
 
 $imgArr = scandir("upload");
 $countFiles = count($imgArr);
-$upload_dir = "upload/";
+// request the whole directory folder-
+$upload_dir = "upload/"; 
 $img = $_POST['imageTest'];
 $img = str_replace('data:image/png;base64,', '', $img);
 $img = str_replace(' ', '+', $img);

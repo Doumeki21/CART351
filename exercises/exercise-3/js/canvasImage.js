@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
   //1. DRAWING
   // THE DRAWING PAGE //
@@ -43,7 +44,7 @@ $(document).ready(function () {
   // and stop drawing
   function startPainting(event) {
     if (newSketch === true) {
-      ctx.fillStyle = "beige";
+      ctx.fillStyle = "#f4d1c1";
       ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
       newSketch = false;
     }
@@ -88,10 +89,16 @@ $(document).ready(function () {
   }
 
 
-
+  // Sabine's code sample
   //2. DOWNLOAD + SAVE IMAGE
   //event listener for download
   document.getElementById("submit").addEventListener("click", function () {
+    document.getElementById("instruction").innerHTML = "Check out the gallery ◉‿◉";
+    document.getElementById("instruction").style.color = "red";
+    document.getElementById("goback").style.backgroundColor = "#ffa500";
+    document.getElementById("goback").style.opacity = "1";
+    $(this).css('background-color', '#c17e01');
+
     // step 1: grab canvas data - put in an image container
     let imgURL = canvas.toDataURL("image/png");
     // document.getElementById("imageContainer").src = imgURL;
@@ -111,14 +118,11 @@ $(document).ready(function () {
         //reponse is a STRING (not a JavaScript object -> so we need to convert)
         console.log("we had success!");
         console.log(response);
-        newSketch = true
+        newSketch = true;
+        
       },
       error: function () {
         console.log("error occurred");
       },
     });
-
-
-    // 3. REQUEST THE IMAGE
-
   });
