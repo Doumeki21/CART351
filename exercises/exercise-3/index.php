@@ -17,7 +17,7 @@
 <body>
     <section>
             <button id="goback" class ="button" onclick="goBack()">Art Gallery</button>
-            <button id="submit" class ="button" onclick="submit()">Submit Masterpiece</button>
+            <button id="submit" class ="button">Submit Masterpiece</button>
             <h2 id="instruction">Draw Something to Share ≖‿≖</h2>
     </section>
     

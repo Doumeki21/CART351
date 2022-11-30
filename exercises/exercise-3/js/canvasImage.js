@@ -108,7 +108,7 @@ $(document).ready(function () {
     $.ajax({
       type: "POST",
       enctype: "multipart/form-data",
-      url: "/canvasSave.php",
+      url: "canvasSave.php",
       data: data,
       processData: false, //prevents from converting into a query string
       contentType: false,
