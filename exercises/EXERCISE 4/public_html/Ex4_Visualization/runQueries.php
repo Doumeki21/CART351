@@ -50,17 +50,17 @@ if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET["select-query"]))
 
     if($_GET["select-query"]==="four"){
       //TO IMPLEMENT:
-        $selectedQuery = "SELECT * FROM dataStuff,events ORDER BY events";
+        $selectedQuery = "SELECT * FROM dataStuff,events WHERE dataStuff.eID = events.eventID ORDER BY eventName";
       }
 
     if($_GET["select-query"]==="five"){
       //TO IMPLEMENT:
-      $selectedQuery = "SELECT * FROM dataStuff,events WHERE ";
+      $selectedQuery = "SELECT * FROM dataStuff WHERE day IN ('Monday','Tuesday') ORDER BY event_affect_strength";
     }
 
     else if($_GET["select-query"]==="six"){
       //TO IMPLEMENT:
-      $selectedQuery = "";
+      $selectedQuery = "SELECT * FROM dataStuff WHERE start_mood IN ('sad','angry','neutral','calm', 'anxious','moody','hurt') AND after_mood IN ('sad','angry','neutral','calm', 'anxious','moody','hurt') ORDER BY weather";
   }
 
   if($selectedQuery!==""){
