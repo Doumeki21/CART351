@@ -60,7 +60,7 @@ querySelectDropDown.onchange = function() {
       ****/
       case "three":{
        // TODO
-       displayInCirclularPattern(parsedJSON);
+       displayAsBars(parsedJSON);
         break;
       }
       case "four":{
@@ -92,6 +92,29 @@ querySelectDropDown.onchange = function() {
   /***********************************************/
 
 };
+/*******************DISPLAY AS BARS****************************/
+function displayAsBars (resultSet) {
+  //reset
+  dataPoints =[];
+  let xPos = 0;
+  let yPos= 0;
+
+  //set background of parent ... for fun ..
+  document.getElementById("parent-wrapper").style.background = "rgb(201, 127, 77)";
+  description.textContent = "BY HAPPY - AFTER MOODS";
+  description.style.color = "rgb(0,0,0)";
+
+  // 5 happy moods
+  let coloredMoods = {}
+
+    let possibleMoods = resultSet[resultSet.length-1];
+    let possibleColors = ['rgb(153, 178, 194)', 'rgb(115, 130, 140)'];
+
+    for(let i = 0; i< possibleMoods.length; i++){
+      coloredMoods[possibleMoods[i]] = possibleColors[i];
+
+      }
+}
 
   /*******************DISPLAY AS GROUP****************************/
 
