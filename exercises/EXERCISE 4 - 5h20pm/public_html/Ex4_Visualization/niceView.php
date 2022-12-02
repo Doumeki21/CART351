@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Olenka EX4</title>
+<title>SAMPLE RETRIEVAL AND QUERIES </title>
 
 <!--set some style properties::: -->
 
