@@ -59,16 +59,7 @@ element {
   border-radius: 2px;
 }
 
-
-
-/* .point_two{
-background-color:white;
-width:7px;
-height:7px;
-position:absolute;
-border-radius: 3px;
-} */
-
+/* QUERY THREE */
 .point_five {
   background-color: white;
   width: 5px;
@@ -93,6 +84,7 @@ border-radius: 3px;
   border-radius: 0px;
 }
 
+/* QUERY ONE, TWO */
 .point_two {
   background-color: white;
   width: 10px;
@@ -101,6 +93,8 @@ border-radius: 3px;
   border-radius: 5px;
 }
 
+
+/* QUERY 0 */
 .point {
   background-color: white;
   width: 15px;
