@@ -46,6 +46,21 @@ footer {
   color: white;
 }
 
+/* query 3 arnaud */
+element {
+  background: rgb(128, 206, 215);
+}
+
+.point-three {
+  background-color: white;
+  width: 7px;
+  height: 20px;
+  position: absolute;
+  border-radius: 2px;
+}
+
+
+
 /* .point_two{
 background-color:white;
 width:7px;
@@ -92,16 +107,6 @@ border-radius: 3px;
   height: 15px;
   border-radius: 5px;
   position: absolute;
-}
-
-/* for dropDown*/
-.css-select {
-  background: rgba(51, 102, 255, 0.6);
-  width: 30%;
-  margin-left: 45px;
-  color: white;
-  font-size: 14px;
-  outline: none;
 }
 
 
@@ -218,6 +223,13 @@ border-radius: 3px;
   position:absolute;
   border-radius: 20px;
 }
+
+.pointRGB{
+  background-color:white;
+  width:850px;
+  height:1px;
+  filter: grayscale(1);
+  }
   
 /* for dropDown*/
 .css-select{
@@ -236,3 +248,4 @@ outline:none;
   position:absolute;
   /* margin: 100px; */
 }
+

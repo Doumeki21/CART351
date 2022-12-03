@@ -60,7 +60,8 @@ querySelectDropDown.onchange = function() {
       ****/
       case "three":{
        // TODO
-        displayByMoodStrength(parsedJSON);
+      //  displayByMondayOrTuesday(parsedJSON);
+      displayAsDefaultThree(parsedJSON);
         break;
       }
       case "four":{
@@ -71,7 +72,7 @@ querySelectDropDown.onchange = function() {
 
       case "five":{
         // TODO
-        displayByMondayOrTuesday(parsedJSON);
+        displayByMoodStrength(parsedJSON);
         break;
       }
       case "six":{
@@ -222,7 +223,7 @@ document.getElementById("childOne").style.height = `${yPos+CELL_SIZE}px`;
 
 function displayByEventName(resultSet){
   document.getElementById("parent-wrapper").style.background = "rgba(0, 255, 255,.4)";
-  description.textContent = "FOURTH QUERY";
+  description.textContent = "BY EVENT NAME";
   description.style.color = 'rgb(255, 0, 102)';
 
   let weather = ['stormy', 'raining', 'sunny', 'cloudy', 'clear', 'snowing', 'grey', 'fog'];
@@ -288,55 +289,129 @@ function displayByEventName(resultSet){
 
 
 /*******************DISPLAY FOR THIRD QUERY****************************/
-function displayByMoodStrength(resultSet){
-  document.getElementById("parent-wrapper").style.background = "rgba(150, 150, 150,.4)";
-  description.textContent = "THIRD QUERY";
-  description.style.color = 'rgb(50, 50, 50)';
-
-
+function display_case_three(resultSet){
   dataPoints =[];
-  let xPos = 0;
-  let yPos =0;
-  const NUM_COLS =40;
-  const CELL_SIZE = 20;
-  colorByEventAffectStrength = ['rgb(0, 0, 0)', 'rgb(25, 25, 25)','rgb(50, 50, 50)','rgb(75, 75, 75)','rgb(100, 100, 100)', 'rgb(125, 125, 125)','rgb(150, 150, 150)','rgb(175, 175, 175)','rgb(210, 210, 210)','rgb(255, 255, 255)'];
+  const CELL_SIZE = 10;
+  const Y_OFFSET = 25
+  let yPos = 0;
+  let xPosCalm = 0;
+  let xPosHappy = 0;
+  let xPosNeutral = 0;
+  let xPosSerene = 0;
+  let xPosWell = 0;
 
-  for(let i = 0; i < resultSet.length; i++){
-    for(let j = 0; j < 10; j++){
-      if(resultSet[i].event_affect_strength == j+1){
-        dataPoints.push(new myDataPoint(resultSet[i].dataId,
-          resultSet[i].day,
-          resultSet[i].weather,
-          resultSet[i].start_mood,
-          resultSet[i].after_mood,
-          resultSet[i].after_mood_strength,
-          resultSet[i].event_affect_strength,
-          resultSet[i].eID,
-          //map to the day ...
-          colorByEventAffectStrength[j],
-          //last parameter is where should this go...
-          document.getElementById("childOne"),
-          //which css style///
-          "point_three"
-        ));
-          if(i%NUM_COLS === 0){
-            //reset x and inc y (go to next row)
-            xPos = 0;
-            yPos += CELL_SIZE;
-          }
-          else{
-            //just move along in the column
-            xPos += CELL_SIZE;
-          }
-          //update the position of the data point...
-          dataPoints[i].update(xPos,yPos);
-          // console.log("data points: " + dataPoints[i]);
-        
-      }
-    }
+
+  document.getElementById("parent-wrapper").style.background = "#80CED7";
+
+  description.textContent = "STEM AND LEAF PLOT - If the strength of the mood is higher, the color is darker";
+
+  description.style.color = 'rgb(255, 0, 85)';
+
+  let after_mood_colors = {
+    'happy': '#5E2BFF',
+    'neutral': '#C04CFD',
+    'calm':'#FC6DAB',
+    'serene':'#F7F6C5',
+    'well':'#F3FAE1'
   }
-  document.getElementById("childOne").style.height = `${yPos+CELL_SIZE}px`;
-}//function
+
+//last  element is the helper array...
+  for(let i = 0; i<resultSet.length-1; i++){
+    dataPoints.push(new ArnoDataPointThree(resultSet[i].dataId,
+      resultSet[i].day,
+      resultSet[i].weather,
+      resultSet[i].start_mood,
+      resultSet[i].after_mood,
+      resultSet[i].after_mood_strength,
+      resultSet[i].event_affect_strength,
+      resultSet[i].eID,
+      //map to the day ...
+      after_mood_colors[resultSet[i].after_mood],
+      //last parameter is where should this go...
+      document.getElementById("childOne"),
+      //which css style///
+      "point-three"
+    ));
+    
+    // if happy we put them on the first row
+    if(dataPoints[i].after_mood === 'calm'){
+      dataPoints[i].update(xPosCalm,yPos);
+      xPosCalm += CELL_SIZE;
+    }
+    if(dataPoints[i].after_mood === 'happy'){
+      dataPoints[i].update(xPosHappy,yPos+Y_OFFSET);
+      xPosHappy += CELL_SIZE;
+    }
+    if(dataPoints[i].after_mood === 'neutral'){
+      dataPoints[i].update(xPosNeutral,yPos+(2*Y_OFFSET));
+      xPosNeutral += CELL_SIZE;
+    }
+    if(dataPoints[i].after_mood === 'serene'){
+      dataPoints[i].update(xPosSerene,yPos+(3*Y_OFFSET));
+      xPosSerene += CELL_SIZE;
+    }
+    if(dataPoints[i].after_mood === 'well'){
+      dataPoints[i].update(xPosWell,yPos+(4*Y_OFFSET));
+      xPosWell += CELL_SIZE;
+    }
+
+}//for
+
+
+document.getElementById("childOne").style.height = `${yPos+CELL_SIZE + 75}px`;
+
+}
+
+
+// function displayByMoodStrength(resultSet){
+//   document.getElementById("parent-wrapper").style.background = "rgba(150, 150, 150,.4)";
+//   description.textContent = "BY POSITIVE AFTER MOOD";
+//   description.style.color = 'rgb(50, 50, 50)';
+
+
+//   dataPoints =[];
+//   let xPos = 0;
+//   let yPos =0;
+//   const NUM_COLS =40;
+//   const CELL_SIZE = 20;
+//   colorByEventAffectStrength = ['rgb(0, 0, 0)', 'rgb(25, 25, 25)','rgb(50, 50, 50)','rgb(75, 75, 75)','rgb(100, 100, 100)', 'rgb(125, 125, 125)','rgb(150, 150, 150)','rgb(175, 175, 175)','rgb(210, 210, 210)','rgb(255, 255, 255)'];
+
+//   for(let i = 0; i < resultSet.length; i++){
+//     for(let j = 0; j < 10; j++){
+//       if(resultSet[i].event_affect_strength == j+1){
+//         dataPoints.push(new myDataPoint(resultSet[i].dataId,
+//           resultSet[i].day,
+//           resultSet[i].weather,
+//           resultSet[i].start_mood,
+//           resultSet[i].after_mood,
+//           resultSet[i].after_mood_strength,
+//           resultSet[i].event_affect_strength,
+//           resultSet[i].eID,
+//           //map to the day ...
+//           colorByEventAffectStrength[j],
+//           //last parameter is where should this go...
+//           document.getElementById("childOne"),
+//           //which css style///
+//           "point_three"
+//         ));
+//           if(i%NUM_COLS === 0){
+//             //reset x and inc y (go to next row)
+//             xPos = 0;
+//             yPos += CELL_SIZE;
+//           }
+//           else{
+//             //just move along in the column
+//             xPos += CELL_SIZE;
+//           }
+//           //update the position of the data point...
+//           dataPoints[i].update(xPos,yPos);
+//           // console.log("data points: " + dataPoints[i]);
+        
+//       }
+//     }
+//   }
+//   document.getElementById("childOne").style.height = `${yPos+CELL_SIZE}px`;
+// }//function
 
 
 
@@ -545,5 +620,74 @@ function displayAsDefault(resultSet){
 
 }//function
 
+
+/*****************DISPLAY AS DEFAULT GRID :: AT ONLOAD ******************************/
+function displayAsDefaultThree(resultSet){
+  //reset
+  dataPoints =[];
+  let xPos = 0;
+  let yPos =0;
+  const NUM_COLS =50;
+  const CELL_SIZE = 20;
+  let coloredDays = {}
+  /*
+  1: get the array of days (last element in the result set  -- see runQueries.php)
+  2: for each possible day (7)  - create a key value pair -> day: color and put in the
+  coloredDays object
+  */
+  let possibleDays = resultSet[resultSet.length-1];
+  let possibleColors = ['rgb(255, 102, 153)', 'rgb(255, 77, 136)','rgb(255, 51, 119)','rgb(255, 26, 102)','rgb(255, 0, 85)','rgb(255, 0, 85)','rgb(255, 0, 85)'];
+
+  for(let i = 0; i< possibleDays.length; i++){
+    coloredDays[possibleDays[i]] = possibleColors[i];
+  }
+/* for through each result  / not last as last is the days array and:
+1: create a new MyDataPoint object and pass the properties from the db result entry to the object constructor
+2: set the color using the coloredDays object associated with the resultSet[i].day
+3:  put into the dataPoints array.
+**/
+//set background of parent ... for fun ..
+ document.getElementById("parent-wrapper").style.background = "rgba(255,0,0,.4)";
+  description.textContent = "DEfAULT CASE";
+  description.style.color = 'rgb(255, 0, 85)';
+
+//last  element is the helper array...
+  for(let i = 0; i<resultSet.length-1; i++){
+    dataPoints.push(new myDataPoint(resultSet[i].dataId,
+      resultSet[i].day,
+      resultSet[i].weather,
+      resultSet[i].start_mood,
+      resultSet[i].after_mood,
+      resultSet[i].after_mood_strength,
+      resultSet[i].event_affect_strength,
+      resultSet[i].eID,
+      //map to the day ...
+      coloredDays[resultSet[i].day],
+      //last parameter is where should this go...
+      document.getElementById("childOne"),
+      //which css style///
+      "point"
+    ));
+/** this code is rather brittle - but does the job for now .. draw a grid of data points ..
+//*** drawing a grid ****/
+  if(i%NUM_COLS ===0){
+    //reset x and inc y (go to next row)
+    xPos =0;
+    yPos+=CELL_SIZE;
+  }
+  else{
+    //just move along in the column
+    xPos+=CELL_SIZE;
+  }
+  //update the position of the data point...
+  dataPoints[i].update(xPos,yPos);
+}//for
+  document.getElementById("childOne").style.height = `${yPos+CELL_SIZE}px`;
+
+}//function
+
+
 /***********************************************/
 });
+
+
