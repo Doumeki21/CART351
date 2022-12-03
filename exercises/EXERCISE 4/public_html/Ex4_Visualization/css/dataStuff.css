@@ -51,14 +51,6 @@ element {
   background: rgb(128, 206, 215);
 }
 
-.point-three {
-  background-color: white;
-  width: 7px;
-  height: 20px;
-  position: absolute;
-  border-radius: 2px;
-}
-
 /* QUERY THREE */
 .point_five {
   background-color: white;
@@ -84,14 +76,7 @@ element {
   border-radius: 0px;
 }
 
-/* QUERY ONE, TWO */
-.point_two {
-  background-color: white;
-  width: 10px;
-  height: 10px;
-  position: absolute;
-  border-radius: 5px;
-}
+
 
 
 /* QUERY 0 */
@@ -103,8 +88,17 @@ element {
   position: absolute;
 }
 
+/* QUERY ONE, TWO */
+.point_two {
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 5px;
+}
 
-/* o + m */
+
+/* QUERY 4 */
 .point0{
   background-color:white;
   width:2px;
@@ -217,7 +211,18 @@ element {
   position:absolute;
   border-radius: 20px;
 }
+/* QUERY 4 */
 
+/* QUERY 5 */
+.point-five {
+  background-color: white;
+  width: 7px;
+  height: 20px;
+  position: absolute;
+  border-radius: 2px;
+}
+
+/* QUERY 6 */
 .pointRGB{
   background-color:white;
   width:850px;
