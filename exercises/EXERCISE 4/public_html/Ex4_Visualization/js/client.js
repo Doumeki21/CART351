@@ -559,7 +559,7 @@ $(document).ready(function () {
   function displayByStartMoodAfterMood(resultSet) {
     //set background of parent ... for fun ..
     document.getElementById("parent-wrapper").style.background =
-      "rgb(244, 243, 238)";
+      "rgb(176,137,104)";
     description.textContent = "BY WEATHER";
     description.style.color = "rgb(0, 0, 0)";
 
