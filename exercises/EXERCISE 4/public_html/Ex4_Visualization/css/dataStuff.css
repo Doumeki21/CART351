@@ -22,6 +22,11 @@ footer {
   text-align: center;
 }
 
+footer:hover {
+  color: rgb(51, 102, 255);
+  cursor: pointer;
+}
+
 #parent-wrapper {
   background: rgba(51, 102, 255, 0.2);
   margin: 0;
@@ -46,39 +51,6 @@ footer {
   color: white;
 }
 
-/* query 3 arnaud */
-element {
-  background: rgb(128, 206, 215);
-}
-
-/* QUERY THREE */
-.point_five {
-  background-color: white;
-  width: 5px;
-  height: 5px;
-  position: absolute;
-  border-radius: 20px;
-}
-
-.point_four {
-  background-color: white;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  border-radius: 20px;
-}
-
-.point_three {
-  background-color: white;
-  width: 12px;
-  height: 12px;
-  position: absolute;
-  border-radius: 0px;
-}
-
-
-
-
 /* QUERY 0 */
 .point {
   background-color: white;
@@ -97,6 +69,14 @@ element {
   border-radius: 5px;
 }
 
+/* QUERY THREE */
+.point_five {
+  background-color: white;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  border-radius: 20px;
+}
 
 /* QUERY 4 */
 .point0{
@@ -214,6 +194,14 @@ element {
 /* QUERY 4 */
 
 /* QUERY 5 */
+.point_three {
+  background-color: white;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  border-radius: 0px;
+}
+
 .point-five {
   background-color: white;
   width: 7px;
@@ -238,13 +226,11 @@ margin-left:45px;
 color:white;
 font-size: 14px;
 outline:none;
-
 }
 
-.words{
+/* .words{
   color: black;
   font-size: 1em;
   position:absolute;
-  /* margin: 100px; */
-}
+} */
 

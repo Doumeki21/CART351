@@ -58,8 +58,7 @@ $(document).ready(function () {
          ****/
         case "three": {
           // TODO
-          //  displayByMondayOrTuesday(parsedJSON);
-          displayByEventAffectStrength(parsedJSON);
+          displayByPositiveAfterMood(parsedJSON);
           break;
         }
         case "four": {
@@ -70,7 +69,7 @@ $(document).ready(function () {
 
         case "five": {
           // TODO
-          displayByMoodStrength(parsedJSON);
+          displayByMondayOrTuesday(parsedJSON);
           break;
         }
         case "six": {
@@ -91,7 +90,6 @@ $(document).ready(function () {
     /***********************************************/
   };
 
-  
   /*****************DISPLAY AS DEFAULT GRID :: AT ONLOAD ******************************/
   function displayAsDefault(resultSet) {
     //reset
@@ -167,8 +165,6 @@ $(document).ready(function () {
     document.getElementById("childOne").style.height = `${yPos + CELL_SIZE}px`;
   } //function
 
-
-
   /*****************DISPLAY IN CIRCUlAR PATTERN:: <ONE>******************************/
   function displayInCirclularPattern(resultSet) {
     //reset
@@ -242,7 +238,6 @@ $(document).ready(function () {
 
     document.getElementById("childOne").style.height = `${yHeight}px`;
   } //function
-
 
   /*******************DISPLAY AS GROUP****************************/
 
@@ -337,10 +332,15 @@ $(document).ready(function () {
     document.getElementById("childOne").style.height = `${finalHeight + 20}px`;
   } //function
 
-
-
   /***************** QUERY THREE ******************************/
-  function displayByEventAffectStrength(resultSet, propOne) {
+  function displayByPositiveAfterMood(resultSet, propOne) {
+    //set background of parent
+    document.getElementById("parent-wrapper").style.background =
+      "rgba(238, 129, 129,1)";
+    description.textContent = "BY POSITIVE AFTER MOOD";
+    description.style.color = "rgb(43, 79, 68)";
+    // document.getElementsByTagName("footer")[0].innerHTML = "something";
+
     dataPoints = [];
     //for grid drawing
     const NUM_COLS = 40;
@@ -363,13 +363,6 @@ $(document).ready(function () {
     for (let i = 0; i < possibleEvents.length; i++) {
       coloredEvents[possibleEvents[i]] = possibleColors[i];
     }
-
-    //set background of parent
-    document.getElementById("parent-wrapper").style.background =
-      "rgba(238, 129, 129,1)";
-    description.textContent = "BY EVENT AFFECT STRENGTH";
-    description.style.color = "rgb(43, 79, 68)";
-    document.getElementsByTagName("footer")[0].innerHTML = "boing boing boing";
 
     for (let i = 0; i < resultSet.length - 1; i++) {
       dataPoints.push(
@@ -405,7 +398,6 @@ $(document).ready(function () {
     } //for
     document.getElementById("childOne").style.height = `${yPos + CELL_SIZE}px`;
   } //FUNCTION
-
 
   /******************* QUERY FOUR ****************************/
 
@@ -493,18 +485,18 @@ $(document).ready(function () {
             //update the position of the data point...
             dataPoints[i].update(xPos, yPos);
             // console.log("data points: " + dataPoints[i]);
-          }}
-      }}
+          }
+        }
+      }
+    }
     document.getElementById("childOne").style.height = `${yPos + CELL_SIZE}px`;
-  }//function
-
-
+  } //function
 
   /******************* QUERY FIVE ****************************/
-  function displayByMoodStrength(resultSet) {
+  function displayByMondayOrTuesday(resultSet) {
     document.getElementById("parent-wrapper").style.background =
       "rgba(51, 92, 103)";
-    description.textContent = "BY POSITIVE AFTER MOOD";
+    description.textContent = "BY EVENT AFFECT STRENGTH";
     description.style.color = "rgb(255, 240, 243)";
 
     dataPoints = [];
@@ -563,9 +555,14 @@ $(document).ready(function () {
     document.getElementById("childOne").style.height = `${yPos + CELL_SIZE}px`;
   } //function
 
+  /*******************  QUERY SIX  ****************************/
+  function displayByStartMoodAfterMood(resultSet) {
+    //set background of parent ... for fun ..
+    document.getElementById("parent-wrapper").style.background =
+      "rgb(244, 243, 238)";
+    description.textContent = "BY WEATHER";
+    description.style.color = "rgb(0, 0, 0)";
 
-   /*******************  QUERY SIX  ****************************/
-   function displayByStartMoodAfterMood(resultSet) {
     //reset
     let xPos = 0;
     let yPos = 0;
@@ -585,12 +582,6 @@ $(document).ready(function () {
       "rgb(0, 0, 255)",
       "rgb(255, 0, 0)",
     ];
-
-    //set background of parent ... for fun ..
-    document.getElementById("parent-wrapper").style.background =
-      "rgb(244, 243, 238)";
-    description.textContent = "BY WEATHER";
-    description.style.color = "rgb(0, 0, 0)";
 
     //last  element is the helper array...
     for (let i = 0; i < resultSet.length; i++) {
