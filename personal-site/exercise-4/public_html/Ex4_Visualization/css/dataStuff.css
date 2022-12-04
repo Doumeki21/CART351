@@ -1,0 +1,236 @@
+/* PLEASE DO NOT CHNAGE THE EXISTING STYLES - JUST ADD ... FOR YOUR VISUALIZATIONS **/
+body,
+html {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: rgba(51, 102, 255, 0.2);
+  height: 100%;
+}
+
+header {
+  text-align: center;
+  color: rgba(51, 102, 255, 0.6);
+  padding: 10px;
+}
+
+footer {
+  padding: 0;
+  margin: 0;
+  padding: 10px;
+  color: rgba(51, 102, 255, 0.6);
+  text-align: center;
+}
+
+/* footer:hover {
+  color: rgb(51, 102, 255);
+  cursor: pointer;
+} */
+
+#parent-wrapper {
+  background: rgba(51, 102, 255, 0.2);
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  /* min-width:1500px; */
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+#childOne {
+  margin: 0;
+  margin-left: 20%;
+  margin-top: 20px;
+  width: 80%;
+  position: relative;
+  padding: 15px;
+}
+
+#Ex4_title {
+  margin-left: 20%;
+  color: white;
+}
+
+/* QUERY 0 */
+.point {
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  position: absolute;
+}
+
+/* QUERY ONE, TWO */
+.point_two {
+  background-color: white;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  border-radius: 5px;
+}
+
+/* QUERY THREE */
+.point_five {
+  background-color: white;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  border-radius: 20px;
+}
+
+/* QUERY 4 */
+.point0{
+  background-color:white;
+  width:2px;
+  height:2px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point1{
+  background-color:white;
+  width:5px;
+  height:5px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point2{
+  background-color:white;
+  width:10px;
+  height:10px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point3{
+  background-color:white;
+  width:15px;
+  height:15px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point4{
+  background-color:white;
+  width:20px;
+  height:20px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point5{
+  background-color:white;
+  width:25px;
+  height:25px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point6{
+  background-color:white;
+  width:30px;
+  height:30px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point7{
+  background-color:white;
+  width:35px;
+  height:35px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point8{
+  background-color:white;
+  width:40px;
+  height:40px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point9{
+  background-color:white;
+  width:45px;
+  height:45px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point10{
+  background-color:white;
+  width:50px;
+  height:50px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point11{
+  background-color:white;
+  width:55px;
+  height:55px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point12{
+  background-color:white;
+  width:60px;
+  height:60px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point13{
+  background-color:white;
+  width:65px;
+  height:65px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point14{
+  background-color:white;
+  width:70px;
+  height:70px;
+  position:absolute;
+  border-radius: 20px;
+}
+.point15{
+  background-color:white;
+  width:75px;
+  height:75px;
+  position:absolute;
+  border-radius: 20px;
+}
+/* QUERY 4 */
+
+/* QUERY 5 */
+.point_three {
+  background-color: white;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  border-radius: 0px;
+}
+
+.point-five {
+  background-color: white;
+  width: 7px;
+  height: 20px;
+  position: absolute;
+  border-radius: 2px;
+}
+
+/* QUERY 6 */
+.pointRGB{
+  background-color:white;
+  width:850px;
+  height:1px;
+  filter: grayscale(1);
+  }
+  
+/* for dropDown*/
+.css-select{
+background: rgba(51,102,255,.6);
+width: 30%;
+margin-left:45px;
+color:white;
+font-size: 14px;
+outline:none;
+}
+
+/* .words{
+  color: black;
+  font-size: 1em;
+  position:absolute;
+} */
+
