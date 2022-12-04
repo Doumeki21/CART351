@@ -22,10 +22,10 @@ footer {
   text-align: center;
 }
 
-footer:hover {
+/* footer:hover {
   color: rgb(51, 102, 255);
   cursor: pointer;
-}
+} */
 
 #parent-wrapper {
   background: rgba(51, 102, 255, 0.2);

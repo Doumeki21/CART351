@@ -37,7 +37,7 @@ NONE, ONE AND TWO HAVE ALREADY BEEN COMPLETED-->
   <div id = "childOne"></div>
 	<h3 id = "Ex4_title"> TEST </h3>
 </div>
-<footer>Download the Code Here</footer>
+<!-- <footer>Nothing to say :3</footer> -->
 
 </body>
 </html>
