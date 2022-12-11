@@ -18,12 +18,14 @@
   
   /* BUTTON HOVER */
   .btn {
+    font-size: large;
     text-decoration: none;
     color: #ffffff;
     font-weight: bold;
     background-color: #f37373;
-    padding: 3%;
+    padding:3%;
     margin-right: 5%;
+    margin-bottom: 50%;
     position: relative;
     /* z-index: 1; */
   }

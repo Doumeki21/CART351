@@ -1,0 +1,550 @@
+@keyframes fadeinall {
+  0% {
+    opacity: 1;
+  }
+
+  97% {
+    opacity: 0;
+  }
+
+  98% {
+    opacity: 0;
+
+    -webkit-transform: translateY(0);
+
+    transform: translateY(0);
+  }
+
+  99% {
+    opacity: 0;
+
+    -webkit-transform: translateY(-100%);
+
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 0;
+
+    z-index: -1;
+  }
+}
+
+#fadein {
+  opacity: 1;
+
+  position: fixed;
+
+  width: 100%;
+
+  height: 100%;
+
+  -webkit-transform: translateY(0);
+
+  -ms-transform: translateY(0);
+
+  transform: translateY(0);
+
+  background-color: #fff;
+
+  z-index: 999;
+
+  -webkit-animation-fill-mode: forwards;
+
+  animation-fill-mode: forwards;
+
+  -webkit-animation: fadeinall 1s normal both;
+
+  animation: fadeinall 1s normal both;
+
+  -webkit-animation-delay: 0.3s;
+
+  animation-delay: 0.3s;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#loader-wrapper {
+  background-color: #ffffff;
+
+  position: fixed;
+
+  z-index: 999;
+
+  width: 100%;
+
+  height: 100%;
+
+  text-align: center;
+}
+
+.loader {
+  width: 40px;
+
+  height: 40px;
+
+  border: 5px solid #000000;
+
+  border-bottom-color: transparent;
+
+  border-radius: 50%;
+
+  margin-top: calc(50vh - 20px);
+
+  display: inline-block;
+
+  box-sizing: border-box;
+
+  -webkit-animation: rotation 1s linear infinite;
+
+  animation: rotation 1s linear infinite;
+}
+
+body {
+  height: 100000px;
+  overflow-x: hidden;
+}
+
+p {
+  font-family: 'Zen Dots', cursive;
+}
+
+label {
+  font-family: 'Zen Dots', cursive;
+  border: #000;
+}
+
+input {
+  border: 2px solid rgb(54, 54, 54);
+  border-radius: 8px;
+  background: none;
+}
+
+.button-submit{
+  margin: 10px;
+  padding: 15px 30px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #F09819  51%, #FF512F  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-87:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.button-87:active {
+  transform: scale(0.95);
+}
+
+.vis {
+  position: relative;
+  left: 240px;
+}
+
+.vertical-section {
+  height: 5950px;
+  width: 100%;
+  background: linear-gradient(#070016 2%,
+      #1f0062 60%,
+      #96daf6 95%);
+}
+
+.horizontal-section {
+  position: relative;
+  max-height: 100%;
+  background: rgb(141, 92, 19) !important;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Stars */
+
+.absolute {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+.absolute.above {
+  z-index: 2;
+}
+
+.absolute h2 {
+  left: 50%;
+  font-size: 140px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #58399a;
+  z-index: -1;
+}
+
+.question {
+  position: absolute;
+  padding: 20px;
+  top: 5%;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  z-index: 999;
+}
+
+/* Forgive me for this */
+
+#question1 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question2 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question3 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question4 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question5 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question6 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question7 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question8 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question9 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question10 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question11 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question12 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question13 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question14 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question15 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question16 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question17 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question18 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question19 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question20 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question21 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question22 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question23 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question24 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+}
+
+#question25 {
+  position: fixed !important;
+  width: 50%;
+  left: 25%;
+  top: 5%;
+}
+
+/* For I have sinned */
+
+.earth {
+  position: absolute;
+  min-width: 3840px;
+  min-height: 100%;
+}
+
+.hori-lay-1 {
+  top: -605px !important;
+  right: 0;
+  min-width: 5000px;
+  position: absolute;
+  display: inline-block
+}
+
+.hori-lay-2 {
+  top: -244px !important;
+  right: 0px;
+  min-width: 3840;
+  position: absolute;
+  width: fit-content;
+}
+
+.hori-lay-3 {
+  top: 0px !important;
+  right: 0px;
+  min-width: 3840px;
+  position: absolute;
+  width: fit-content;
+}
+
+.lg-white {
+  width: 160px;
+  height: 160px;
+  background: linear-gradient(to right,
+      #fff,
+      rgb(207, 207, 207) 40%,
+      #fff 60%,
+      #fff 80%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: content-box;
+  -webkit-text-fill-color: transparent;
+  animation: swipe 2s linear infinite;
+  border-radius: 12px;
+  margin-left: -80px;
+  margin-top: 200px;
+  outline-width: 10px;
+  outline-style: solid;
+}
+
+.sm-white {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(to right,
+      #fff,
+      rgb(207, 207, 207) 40%,
+      #fff 60%,
+      #fff 80%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: content-box;
+  -webkit-text-fill-color: transparent;
+  animation: swipe 2s linear infinite;
+  border-radius: 12px;
+  margin-left: -30px;
+  margin-top: 400px;
+  outline-width: 10px;
+  outline-style: solid;
+}
+
+.sm-blue {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(to right,
+      #fff,
+      rgb(207, 207, 207) 40%,
+      #fff 60%,
+      #fff 80%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: content-box;
+  -webkit-text-fill-color: transparent;
+  animation: swipe 2s linear infinite;
+  border-radius: 12px;
+  margin-left: -30px;
+  margin-top: 400px;
+  outline-width: 10px;
+  outline-style: solid;
+}
+
+.xs-white {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(to right,
+      #fff,
+      rgb(207, 207, 207) 40%,
+      #fff 60%,
+      #fff 80%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: content-box;
+  -webkit-text-fill-color: transparent;
+  animation: swipe 2s linear infinite;
+  border-radius: 12px;
+  margin-left: -30px;
+  margin-top: 400px;
+  outline-width: 10px;
+  outline-style: solid;
+}
+
+.md-white {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(to right,
+      #fff,
+      rgb(207, 207, 207) 40%,
+      #fff 60%,
+      #fff 80%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: content-box;
+  -webkit-text-fill-color: transparent;
+  animation: swipe 2s linear infinite;
+  border-radius: 12px;
+  margin-left: -60px;
+  margin-top: 10px;
+  outline-width: 10px;
+  outline-style: solid;
+}
+
+.lg-blue {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(to right,
+      #fff,
+      rgb(207, 207, 207) 40%,
+      #fff 60%,
+      #fff 80%);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: content-box;
+  -webkit-text-fill-color: transparent;
+  animation: swipe 2s linear infinite;
+  border-radius: 12px;
+  margin-left: 57px;
+  margin-top: 60px;
+  outline-width: 10px;
+  outline-width: 10px;
+  outline-style: solid;
+}
+
+/* Flashy text */
+
+.gradient-text {
+  text-align: center;
+
+  background: linear-gradient(to right,
+      rgba(255, 255, 255, 0) 30%,
+      #e5f10088 40%,
+      #e5f100 45%,
+      rgba(255, 255, 255, 0) 46%);
+  background-size: 200% auto;
+
+  color: #000;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: swipe 2s linear infinite;
+  animation-direction: reverse;
+}
+
+@keyframes swipe {
+  to {
+    background-position: 200% center;
+  }
+}

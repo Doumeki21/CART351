@@ -1,5 +1,6 @@
 $(document).ready(function () {
-  // 1
+  //PROPOSAL DROPDOWN
+    // 1
   // open the dropdown menu when hovering the proposal button.
   $("#button").on("mouseover", function () {
     $("#dropdown-container").show();

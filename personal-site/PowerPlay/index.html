@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Power Play</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="description" content="A way to look into your power consumption" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="manifest" href="/img/site.webmanifest">
+  <link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/img/browserconfig.xml">
+  <meta name="theme-color" content="#2c2c2c ">
+  <meta property="og:title" content="" />
+  <meta property="og:description" content="A way to look into your power consumption" />
+  <meta property="og:image" content="" />
+  <meta name="twitter:card" content=summary_large_image"" />
+  <meta name="twitter:title" content="Power Play" />
+  <meta name="twitter:description" content="A way to look into your power consumption" />
+  <meta name="twitter:image" content="" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,700,900' rel='stylesheet' type='text/css'>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script type="module">
+
+    import { scaleLinear } from "https://cdn.skypack.dev/d3-scale@4";
+
+    const x = scaleLinear();
+
+  </script>
+  <script type="text/javascript" src="/js/sticky.js"></script>
+  <script type="text/javascript" src="/js/fadesection.js"></script>
+  <script type="text/javascript" src="js/cookies.js"></script>
+  <script type="text/javascript" src="js/fadein.js"></script>
+  <script type="text/javascript" src="js/loader.js"></script>
+  <script type="text/javascript" src="js/visualization.js"></script>
+</head>
+
+<body style="background-color: #96daf6;">
+  <!-- Loading Scripts -->
+  <div id="fadein"></div>
+  <div id="loader-wrapper">
+    <div class="loader"></div>
+  </div>
+  <audio autoplay="true" src="./sound/l8r.mp3"></audio> <!-- Song is l8r h8r by Terekke -->
+  <!-- Questions -->
+  <form action="process-form.php" method="post" id="submissionform">
+    <!-- Question 1 -->
+    <div class="row align-items-center" id="question1">
+      <div class="col"></div>
+      <div class="question col" id="question1">
+        <p>Oh, Hello.<br> I'm ⟊⟒⍀⟒⋔⊬. I'm doing research on planetary energy consumption for the
+          Galactic Coalition.<br>What is your name?
+        </p>
+        <input type="text" name="name">
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 2 -->
+    <div class="row align-items-center" id="question2">
+      <div class="col"></div>
+      <div class="question col" id="question2">
+        <p>Nice to meet you...<br>I see you are human...<br>Your kind do not live for very
+          long...<br>How
+          old are you?
+        </p>
+        <input type="number" name="age" min="1" max="100" step="1">
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 3 -->
+    <div class="row align-items-center" id="question3">
+      <div class="col"></div>
+      <div class="question col" id="question3" style="position: fixed !important;
+            width: 50%;
+            left: 25%;">
+        <p>⊬⟟☍⟒⌇...
+        </p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 4 -->
+    <div class="row align-items-center" id="question4">
+      <div class="col"></div>
+      <div class="question col" id="question4">
+        <p>Your planet is very beautiful, it is a shame what you are doing there...<br><br>Let us
+          observe your people's behavior
+        </p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 5 -->
+    <div class="row align-items-center" id="question5">
+      <div class="col"></div>
+      <div class="question col" id="question5">
+        <p>Such thick atmosphere, so unlike ⋔⊬ ⌿⌰⏃⋏⟒⏁.<br>How lucky you are
+        </p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 6 -->
+    <div class="row align-items-center" id="question6">
+      <div class="col"></div>
+      <div class="question col" id="question6">
+        <p>A serene sight...<br>My research concerns how responsibly the dominant species of each planet uses their
+          energy.</p>
+        </p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 7 -->
+    <div class="row align-items-center" id="question7">
+      <div class="col"></div>
+      <div class="question col" id="question7">
+        <p>Tell me, considering your household habits,<br> do you...</p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 8 -->
+    <div class="row align-items-center" id="question8">
+      <div class="col"></div>
+      <div class="question col" id="question8">
+        <p>Use air conditioning in the Summer months?</p>
+        <fieldset>
+          <label>
+            <input type="radio" name="ac" value="1"> Yes
+          </label>
+          <label>
+            <input type="radio" name="ac" value="2"> Sometimes
+          </label>
+          <label>
+            <input type="radio" name="ac" value="3"> No
+          </label>
+        </fieldset>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 9 -->
+    <div class="row align-items-center" id="question9">
+      <div class="col"></div>
+      <div class="question col" id="question9">
+        <p>Interesting...</p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 10 -->
+    <div class="row align-items-center" id="question10">
+      <div class="col"></div>
+      <div class="question col" id="question10">
+        <p>And what of Winter?<br>Do you often use heating?</p>
+        <fieldset>
+          <label>
+            <input type="radio" name="heat" value="1"> Yes
+          </label>
+          <label>
+            <input type="radio" name="heat" value="2"> Sometimes
+          </label>
+          <label>
+            <input type="radio" name="heat" value="3"> No
+          </label>
+        </fieldset>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 11 -->
+    <div class="row align-items-center" id="question11">
+      <div class="col"></div>
+      <div class="question col" id="question11">
+        <p>Utile information...<br><br>Moving on</p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 12 -->
+    <div class="row align-items-center" id="question12">
+      <div class="col"></div>
+      <div class="question col" id="question12">
+        <p>You Earthlings secrete many liquids.<br>How often do you clean your "laundry"?</p>
+        <fieldset>
+          <label>
+            <input type="radio" name="laundrycount" value="1"> 1
+          </label>
+          <label>
+            <input type="radio" name="laundrycount" value="2"> 2
+          </label>
+          <label>
+            <input type="radio" name="laundrycount" value="3"> 3
+          </label>
+          <label>
+            <input type="radio" name="laundrycount" value="4"> 4
+          </label>
+          <label>
+            <input type="radio" name="laundrycount" value="5"> 5
+          </label>
+          <label>
+            <input type="radio" name="laundrycount" value="6"> 6
+          </label>
+          <label>
+            <input type="radio" name="laundrycount" value="7"> 7
+          </label>
+          <p>times a week</p>
+        </fieldset>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 13 -->
+    <div class="row align-items-center" id="question13">
+      <div class="col"></div>
+      <div class="question col" id="question13">
+        <p>Horrific.<br><br>Next question</p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 14 -->
+    <div class="row align-items-center" id="question14">
+      <div class="col"></div>
+      <div class="question col" id="question14">
+        <p>When cleaning your laundry (As often as that is...)<br>What temperature water do you use?</p>
+        <fieldset>
+          <label>
+            <input type="radio" name="laundrytemp" value="1"> Cold
+          </label>
+          <label>
+            <input type="radio" name="laundrytemp" value="2"> Warm
+          </label>
+          <label>
+            <input type="radio" name="laundrytemp" value="3"> Hot
+          </label>
+        </fieldset>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 15 -->
+    <div class="row align-items-center" id="question15">
+      <div class="col"></div>
+      <div class="question col" id="question15">
+        <p>Allow ⟊⟒⍀⟒⋔⊬ to give you a bit of advice<br><br>While washing on hot helps remove stains,<br>washing on cold
+          temperature makes your human clothing last longer<br>and uses less energy.</p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 16 -->
+    <div class="row align-items-center" id="question16">
+      <div class="col"></div>
+      <div class="question col" id="question16">
+        <p>How often do you hand wash a full load of dishes?</p>
+        <fieldset>
+          <label>
+            <input type="radio" name="dishescount" value="1"> 1
+          </label>
+          <label>
+            <input type="radio" name="dishescount" value="2"> 2
+          </label>
+          <label>
+            <input type="radio" name="dishescount" value="3"> 3
+          </label>
+          <label>
+            <input type="radio" name="dishescount" value="4"> 4
+          </label>
+          <label>
+            <input type="radio" name="dishescount" value="5"> 5
+          </label>
+          <label>
+            <input type="radio" name="dishescount" value="6"> 6
+          </label>
+          <label>
+            <input type="radio" name="dishescount" value="7"> 7
+          </label>
+          <p>times a week</p>
+        </fieldset>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 17 -->
+    <div class="row align-items-center" id="question17">
+      <div class="col"></div>
+      <div class="question col" id="question17">
+        <p>Further teachings, listen closely.<br><br>Many humans believe hand washing their filthy dishes to be more
+          energy efficient, but that is often not the case. Due to inefficient cleaning there is often an overuse
+          of warm water, a resource humans already should be more careful with.</p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 18 -->
+    <div class="row align-items-center" id="question18">
+      <div class="col"></div>
+      <div class="question col" id="question18">
+        <p>Continuing on... Earthlings have a fondness for their electronics as you call them<br><br>Yet many consume
+          alarming amounts of precious energy with little need...</p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 19 -->
+    <div class="row align-items-center" id="question19">
+      <div class="col"></div>
+      <div class="question col" id="question19">
+        <p>Because of your weak vision you create light in darkness, yet often are not present to use the
+          light.<br><br>Do
+          you turn off your lights when not in use?</p>
+        <fieldset>
+          <label>
+            <input type="radio" name="lights" value="1"> Yes
+          </label>
+          <label>
+            <input type="radio" name="lights" value="2"> Sometimes
+          </label>
+          <label>
+            <input type="radio" name="lights" value="3"> No
+          </label>
+        </fieldset>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 20 -->
+    <div class="row align-items-center" id="question20">
+      <div class="col"></div>
+      <div class="question col" id="question20">
+        <p>And what of these other forms of frivolous so-called technology?<br>Your toasters, humidifiers, gaming
+          consoles and the like?<br><br>Do you disconnect them from drawing power when not in use?</p>
+        <fieldset>
+          <label>
+            <input type="radio" name="electronics" value="1"> Yes
+          </label>
+          <label>
+            <input type="radio" name="electronics" value="2"> Sometimes
+          </label>
+          <label>
+            <input type="radio" name="electronics" value="3"> No
+          </label>
+        </fieldset>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 21 -->
+    <div class="row align-items-center" id="question21">
+      <div class="col"></div>
+      <div class="question col" id="question21">
+        <p>Moving on from these household... habits<br><br>Transportation.</p>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 22 -->
+    <div class="row align-items-center" id="question22">
+      <div class="col"></div>
+      <div class="question col" id="question22">
+        <p>How often do you travel to work or school?</p>
+        <fieldset>
+          <label>
+            <input type="radio" name="commutecount" value="1"> 1
+          </label>
+          <label>
+            <input type="radio" name="commutecount" value="2"> 2
+          </label>
+          <label>
+            <input type="radio" name="commutecount" value="3"> 3
+          </label>
+          <label>
+            <input type="radio" name="commutecount" value="4"> 4
+          </label>
+          <label>
+            <input type="radio" name="commutecount" value="5"> 5
+          </label>
+          <label>
+            <input type="radio" name="commutecount" value="6"> 6
+          </label>
+          <label>
+            <input type="radio" name="commutecount" value="7"> 7
+          </label>
+          <p>times a week</p>
+        </fieldset>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 23 -->
+    <div class="row align-items-center" id="question23">
+      <div class="col"></div>
+      <div class="question col" id="question23">
+        <p>What mode do you use?<br><br>I use my ⌇⊑⟟⌿</p>
+        <fieldset>
+          <label>
+            <input type="radio" name="commutemode" value="walk"> Walk
+          </label>
+          <label>
+            <input type="radio" name="commutemode" value="bicycle"> Bicycle
+          </label>
+          <label>
+            <input type="radio" name="commutemode" value="publictransit"> Public Transit
+          </label>
+          <label>
+            <input type="radio" name="commutemode" value="car"> Car
+          </label>
+        </fieldset>
+      </div>
+      <div class="col"></div>
+    </div>
+    <!-- Question 24 -->
+    <div class="row align-items-center" id="question24">
+      <div class="col"></div>
+      <div class="question col" id="question24">
+        <p>Now then Earthling...<br>Think.<br>Are your actions a necessity?</p>
+        <p>Let us compare my findings on you to the others We have intervened with</p>
+        <button class="button-submit">Complete</button>
+      </div>
+      <div class="col"></div>
+    </div>
+  </form>
+  <!-- Visualization -->
+  <div class="row align-items-center" id="question25">
+    <div class="col"></div>
+    <div class="question row align-items-center" id="vis1">
+      <p>Here is your data alongside your compatriots, Earthling</p>
+      <div class="vis" id='scatter-plot-container'>
+        <div id='scatter-plot'></div>
+      </div>        
+    </div>
+    <div class="col"></div>
+  </div>
+  <!-- Vertical Parallax -->
+  <div class="vertical-section">
+    <div class="absolute">
+      <div>
+      </div>
+    </div>
+    <div class="absolute above">
+      <div class="container">
+        <div class="row">
+          <div class="row">
+            <div class="col"></div>
+            <div class="col-sm">
+              <img class="rellax" src="./img/vertical/Title.png" data-rellax-speed="-5">
+              <h2 class="rellax" data-rellax-speed="5">
+                <span class="gradient-text">by Shayne<br> & Olenka</span>
+              </h2>
+            </div>
+            <div class="col">
+            </div>
+          </div>
+          <div class="col">
+            <img class="rellax" data-rellax-speed="2" src="./img/vertical/Moon.png">
+          </div>
+          <div class="col-sm">
+            <img class="rellax" data-rellax-vertical-scroll-axis="x" style="max-width: 100px;"
+              src="./img/vertical/ISS.png" data-rellax-speed="-5">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="horizontal-section">
+    <div class="earth">
+      <div class="row">
+        <img src="./img/horizontal/layer3.png" alt="Layer 3" class="hori-lay-3 rellax"
+          data-rellax-vertical-scroll-axis="x" data-rellax-speed="1">
+      </div>
+      <div class="row">
+        <img src="./img/horizontal/layer2.png" alt="Layer 2" class="hori-lay-2 rellax"
+          data-rellax-vertical-scroll-axis="x" data-rellax-speed="2">
+      </div>
+      <div class="row">
+        <img src="./img/horizontal/layer1.png" alt="Layer" class="hori-lay-1 rellax"
+          data-rellax-vertical-scroll-axis="x" data-rellax-speed="3">
+      </div>
+    </div>
+  </div>
+  <!-- Parallax Scripts -->
+  <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+  <script>
+    var rellax = new Rellax('.rellax', {
+      horizontal: true,
+      center: true,
+    });
+
+  </script>
+</body>
+
+</html>
